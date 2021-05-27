@@ -16,7 +16,7 @@ public class Blinky extends ghost
     boolean[] intersections = new boolean[31];
      int teleportCount=0;
 
-    public void act() 
+    /*public void act() 
     {
         
         //starting position
@@ -347,5 +347,5 @@ public class Blinky extends ghost
                 intersections[i]=false;
             }
         }
-    }    
+    } */   
 }
