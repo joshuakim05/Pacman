@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+   
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -44,5 +44,10 @@ public class MyWorld extends World
         addObject(border6,108,93);
         border6.setRotation(90);
         border6.setLocation(10,110);
+    {   
+        // Size is at scale width 28, heigh 31, numbers can be changed but scale should stay the same
+        //super(812, 899, 1); 
+        //setBackground("background.png");
     }
+}
 }
