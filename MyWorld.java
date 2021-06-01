@@ -16,6 +16,33 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(645, 650, 1); 
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        BorderLong borderLong = new BorderLong();
+        addObject(borderLong,325,586);
+        Border border = new Border();
+        addObject(border,83,4);
+        Border border2 = new Border();
+        addObject(border2,220,4);
+        Border border3 = new Border();
+        addObject(border3,415,4);
+        Border border4 = new Border();
+        addObject(border4,551,4);
+        Border border5 = new Border();
+        addObject(border5,72,16);
+        border5.setRotation(90);
+        border5.setLocation(10,81);
+        Border border6 = new Border();
+        addObject(border6,108,93);
+        border6.setRotation(90);
+        border6.setLocation(10,110);
     }
 }
