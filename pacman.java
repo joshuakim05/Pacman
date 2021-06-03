@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class pacman extends Actor
+public class Pacman extends Actor
 {
     /**
      * Act - do whatever the pacman wants to do. This method is called whenever
@@ -16,7 +16,7 @@ public class pacman extends Actor
     private GreenfootImage image1;
     private GreenfootImage image2;
     private int timeTillSwitch;
-    public pacman(){
+    public Pacman(){
         image1 = new GreenfootImage("Pac-Man.png");
         image2 = new GreenfootImage("pacman-solid.png");
         timeTillSwitch = 30;
