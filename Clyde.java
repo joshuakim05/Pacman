@@ -26,9 +26,8 @@ public class Clyde extends ghost
             if(Math.abs(getX()-p.getX())<=150 && Math.abs(getY()-p.getY())<150){
                 x = -x;
                 y = -y;
-            }else{
-                setLocation(getX()+x, getY()+y);
             }
+            setLocation(getX()+x, getY()+y);
         }
         /*
         public void move(){
