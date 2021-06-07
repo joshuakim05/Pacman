@@ -17,10 +17,129 @@ public class Blinky extends ghost
      */
     public void act() 
     {
-       move();
+      List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
+      for(Pacman p: pm){
+          if(Math.abs(getX()-p.getX())<30&&Math.abs(getY()-p.getY())<30){
+              close();
+          }else{
+              far();
+          }
+      }
+       setLocation(getX()+x, getY()+y);
+       
     }   
     
-    public void move(){
+    public void far(){
+        List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
+        for(Pacman p: pm){
+            if (isTouching(bottmLeftTP.class)){
+                if(getX()-p.getX()>p.getY()-getY()){
+                    x = -4;
+                    y = 0;
+                }else{
+                    y = 4;
+                    x = 0;
+                }
+            }
+                if (isTouching(bottomLeftRightTP.class)){
+                    if(Math.abs(getX()-p.getX())>p.getY()-getY()){
+                        if (getX()>p.getX()){
+                            x = -4;
+                        }else{
+                            x = 4;
+                        }
+                        y = 0;
+                    }else{
+                        y = 4;
+                        x = 0;
+                    }
+                }
+                if (isTouching(bottomRightTP.class)){
+                    if(p.getX()-getX()>p.getY()-getY()){
+                        x = 4;
+                        y = 0;
+                    }else{
+                        y = 4;
+                        x = 0;
+                    }
+                }
+                if (isTouching(topBottomRightTP.class)){
+                    if(p.getX()-getX()>Math.abs(p.getY()-getY())){
+                        x = 4;
+                        y = 0;
+                    }else{
+                        if (getY()>p.getY()){
+                            y = -4;
+                        }else{
+                            y= 4;
+                        }  
+                        x = 0;            
+                    }
+                }
+                if (isTouching(topBottomLeftRightTP.class)){
+                    if(Math.abs(getX()-p.getX())>Math.abs(getY()- p.getY())){
+                        if (getX()>p.getX()){
+                            x = -4;
+                        }else{
+                            x= 4;
+                        } 
+                        y = 0;
+                    }else{
+                        if (getY()>p.getY()){
+                            y = -4;
+                        }else{
+                            y= 4;
+                        } 
+                        x = 0;
+                    }
+                }
+                if (isTouching(topBottomLeftTP.class)){
+                    if(getX()-p.getX()>Math.abs(getY()- p.getY())){
+                        x = -4;
+                        y = 0;
+                    }else{
+                        if (getY()>p.getY()){
+                            y = -4;
+                        }else{
+                            y= 4;
+                        } 
+                        x = 0;
+                    }
+                }
+                if (isTouching(topLeftRight.class)){
+                    if(Math.abs(getX()-p.getX())>getY()- p.getY()){
+                        if (getX()>p.getX()){
+                            x = -4;
+                        }else{
+                            x= 4;
+                        } 
+                        y = 0;
+                    }else{
+                        y = -4;
+                        x = 0;
+                    }
+                }
+                if (isTouching(topLeftTP.class)){
+                    if(getX()-p.getX()>getY()- p.getY()){
+                        x= -4;
+                        y = 0;
+                    }else{
+                        y = -4;
+                        x = 0;
+                    }
+                }
+                if (isTouching(topRightTP.class)){
+                    if(p.getX()-getX()>getY()- p.getY()){
+                        x= 4;
+                        y = 0;
+                    }else{
+                        y = -4;
+                        x = 0;
+                    }
+                }         
+        }
+    }
+    public void close(){
         List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
         for(Pacman p: pm){
             if (isTouching(bottmLeftTP.class)){
@@ -76,7 +195,7 @@ public class Blinky extends ghost
                     } 
                     y = 0;
                 }else{
-                    if (getY()>p.getY()){
+                    if (getY()<p.getY()){
                         y = -4;
                     }else{
                         y= 4;
@@ -89,7 +208,7 @@ public class Blinky extends ghost
                     x = -4;
                     y = 0;
                 }else{
-                    if (getY()>p.getY()){
+                    if (getY()<p.getY()){
                         y = -4;
                     }else{
                         y= 4;
