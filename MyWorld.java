@@ -230,8 +230,8 @@ public class MyWorld extends World
         int j=0;
         for(int i=359;i>14;i-=15)
         {
-               addObject(new ball(),414,i);
-               j++;
+              addObject(new ball(),414,i);
+                j++;
                addObject(new ball(),184,i);
                j++;
         }
@@ -337,9 +337,9 @@ public class MyWorld extends World
              addObject(new ball(),i,357);
              j++;
              
-    // //     }
+        }
           
-        addObject(new ball(),200,200);
+             addObject(new ball(),200,200);
              j++;
              addObject(new ball(),215,200);
              j++;
@@ -474,7 +474,7 @@ public class MyWorld extends World
              addObject(new ball(),321,293);
              j++;
              addObject(new ball(),321,307);
-    // }
+    }
     
     
     //         // Size is at scale width 28, heigh 31, numbers can be changed but scale should stay the same
@@ -610,6 +610,8 @@ public class MyWorld extends World
     //         addObject(topLeftTP5,618,568);
         }
         
-}
-}
+
+
+
+
 
