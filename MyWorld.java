@@ -232,248 +232,248 @@ public class MyWorld extends World
         {
                addObject(j,414,i);
                j++;
-               addObject(j,184,i);
+               new ball((j),184,i);
                j++;
         }
         for(int i=324;i<414;i+=15)
         {
-            addObject(j,i,29);
+            new ball((j),i,29);
                j++;
         }
          for(int i=429;i<504;i+=15)
         {
-            addObject(j,i,29);
+            new ball((j),i,29);
                j++;
         }
         for(int i=113;i<503;i+=15)
         {
-             addObject(j,i,397);
+             new ball((j),i,397);
              j++;
         }
          for(int i=199;i<401;i+=15)
         {
-             addObject(j,i,81);
+             new ball((j),i,81);
              j++;
-             addObject(j,i,318);
+             new ball((j),i,318);
              j++;
         }
         for(int i=233;i<369;i+=15)
         {
-             addObject(j,i,239);
+             new ball((j),i,239);
              j++;
-             addObject(j,i,161);
+             new ball((j),i,161);
              j++;
         }
         for(int i=177;i<237;i+=15)
         {
-             addObject(j,233,i);
+             new ball((j),233,i);
              j++;
-             addObject(j,366,i);
+             new ball((j),366,i);
              j++;
         }
         for(int i=110;i<184;i+=15)
         {
-             addObject(j,i,29);
+             new ball((j),i,29);
              j++;
         }
         for(int i=199;i<280;i+=15)
         {
-             addObject(j,i,29);
+             new ball((j),i,29);
              j++;
         }
          for(int i=199;i<280;i+=15)
         {
-             addObject(j,i,279);
+             new ball((j),i,279);
              j++;
         }
         for(int i=320;i<410;i+=15)
         {
-             addObject(j,i,279);
+             new ball((j),i,279);
              j++;
         }
          for(int i=428;i<492;i+=15)
         {
-             addObject(j,i,360);
+             new ball((j),i,360);
              j++;
         }
          for(int i=169;i>108;i-=15)
         {
-             addObject(j,i,359);
+             new ball((j),i,359);
              j++;
         }
          for(int i=134;i<179;i+=15)
         {
-             addObject(j,i,200);
+             new ball((j),i,200);
              j++;
         }
          for(int i=431;i<491;i+=15)
         {
-             addObject(j,i,200);
+             new ball((j),i,200);
              j++;
         }
           for(int i=134;i<171;i+=15)
         {
-             addObject(j,i,279);
+             new ball((j),i,279);
              j++;
-              addObject(j,i,80);
+              new ball((j),i,80);
              j++;
         }
          for(int i=109;i<171;i+=15)
         {
-             addObject(j,i,123);
+             new ball((j),i,123);
              j++;
         }
          for(int i=430;i<468;i+=15)
         {
-             addObject(j,i,80);
+             new ball((j),i,80);
              j++;
-             addObject(j,i,122);
+             new ball((j),i,122);
              j++;
-              addObject(j,i,279);
+              new ball((j),i,279);
              j++;
         }
          for(int i=230;i<277;i+=15)
         {
-             addObject(j,i,357);
+             new ball((j),i,357);
              j++;
              
         }
           
-        addObject(j,200,200);
+        new ball((j),200,200);
              j++;
-             addObject(j,215,200);
+             new ball((j),215,200);
              j++;
-              addObject(j,397,200);
+              new ball((j),397,200);
              j++;
-             addObject(j,383,200);
+             new ball((j),383,200);
              j++;
-             addObject(j,486,96);
+             new ball((j),486,96);
              j++;
-             addObject(j,486,110);
+             new ball((j),486,110);
              j++;
-             addObject(j,486,123);
+             new ball((j),486,123);
              j++;
-             addObject(j,473,123);
+             new ball((j),473,123);
              j++;
-             addObject(j,486,300);
+             new ball((j),486,300);
              j++;
-             addObject(j,486,318);
+             new ball((j),486,318);
              j++;
-             addObject(j,486,47);
+             new ball((j),486,47);
              j++;
-              addObject(j,486,63);
+              new ball((j),486,63);
              j++;
-              addObject(j,472,318);
+              new ball((j),472,318);
              j++;
-             addObject(j,458,318);
+             new ball((j),458,318);
              j++;
-             addObject(j,458,333);
+             new ball((j),458,333);
              j++;
-             addObject(j,458,348);
+             new ball((j),458,348);
              j++;
-             addObject(j,488,371);
+             new ball((j),488,371);
              j++;
-             addObject(j,488,383);
+             new ball((j),488,383);
              j++;
-             addObject(j,109,373);
+             new ball((j),109,373);
              j++;
-             addObject(j,109,385);
+             new ball((j),109,385);
              j++;
-             addObject(j,275,370);
+             new ball((j),275,370);
              j++;
-             addObject(j,275,385);
+             new ball((j),275,385);
              j++;
-             addObject(j,364,334);
+             new ball((j),364,334);
              j++;
-             addObject(j,229,331);
+             new ball((j),229,331);
              j++;
-             addObject(j,229,346);
+             new ball((j),229,346);
              j++;
-             addObject(j,110,47);
+             new ball((j),110,47);
              j++;
-             addObject(j,110,63);
+             new ball((j),110,63);
              j++;
-             addObject(j,109,95);
+             new ball((j),109,95);
              j++;
-             addObject(j,109,110);
+             new ball((j),109,110);
              j++;
-             addObject(j,113,301);
+             new ball((j),113,301);
              j++;
-             addObject(j,113,319);
+             new ball((j),113,319);
              j++;
-             addObject(j,129,319);
+             new ball((j),129,319);
              j++;
-             addObject(j,144,319);
+             new ball((j),144,319);
              j++;
-             addObject(j,144,334);
+             new ball((j),144,334);
              j++;
-             addObject(j,144,347);
-             j++;
-             
-             addObject(j,275,45);
-             j++;
-             addObject(j,275,62);
-             j++;
-             addObject(j,324,45);
-             j++;
-             addObject(j,324,62);
+             new ball((j),144,347);
              j++;
              
-             addObject(j,323,384);
+             new ball((j),275,45);
              j++;
-             addObject(j,323,372);
+             new ball((j),275,62);
              j++;
-             addObject(j,323,359);
+             new ball((j),324,45);
              j++;
-             addObject(j,337,359);
-             j++;
-             
-             addObject(j,231,97);
-             j++;
-             addObject(j,253,120);
-             j++;
-             addObject(j,266,120);
-             j++;
-             addObject(j,278,120);
-             j++;
-             addObject(j,278,135);
-             j++;
-             addObject(j,278,148);
+             new ball((j),324,62);
              j++;
              
-             addObject(j,368,97);
+             new ball((j),323,384);
              j++;
-             addObject(j,368,109);
+             new ball((j),323,372);
              j++;
-             addObject(j,368,122);
+             new ball((j),323,359);
              j++;
-             addObject(j,354,122);
-             j++;
-             addObject(j,339,122);
-             j++;
-             addObject(j,324,122);
-             j++;
-             addObject(j,324,136);
-             j++;
-             addObject(j,324,149);
+             new ball((j),337,359);
              j++;
              
-             addObject(j,234,254);
+             new ball((j),231,97);
              j++;
-             addObject(j,234,269);
+             new ball((j),253,120);
              j++;
-             addObject(j,369,254);
+             new ball((j),266,120);
              j++;
-             addObject(j,369,269);
+             new ball((j),278,120);
+             j++;
+             new ball((j),278,135);
+             j++;
+             new ball((j),278,148);
              j++;
              
-             addObject(j,274,293);
+             new ball((j),368,97);
              j++;
-             addObject(j,274,307);
+             new ball((j),368,109);
              j++;
-             addObject(j,321,293);
+             new ball((j),368,122);
              j++;
-             addObject(j,321,307);
+             new ball((j),354,122);
+             j++;
+             new ball((j),339,122);
+             j++;
+             new ball((j),324,122);
+             j++;
+             new ball((j),324,136);
+             j++;
+             new ball((j),324,149);
+             j++;
+             
+             new ball((j),234,254);
+             j++;
+             new ball((j),234,269);
+             j++;
+             new ball((j),369,254);
+             j++;
+             new ball((j),369,269);
+             j++;
+             
+             new ball((j),274,293);
+             j++;
+             new ball((j),274,307);
+             j++;
+             new ball((j),321,293);
+             j++;
+             new ball((j),321,307);
     // }
     
     
