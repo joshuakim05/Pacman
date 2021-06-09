@@ -227,118 +227,190 @@ public class MyWorld extends World
 
         //coin things
 
-        int j=0;
-        for(int i=359;i>14;i-=15)
-        {
-              addObject(new ball(),414,i);
-                j++;
-               addObject(new ball(),184,i);
-               j++;
-        }
-        for(int i=324;i<414;i+=15)
-        {
-            addObject(new ball(),i,29);
-               j++;
-        }
-         for(int i=429;i<504;i+=15)
-        {
-            addObject(new ball(),i,29);
-               j++;
-        }
-        for(int i=113;i<503;i+=15)
-        {
-             addObject(new ball(),i,397);
-             j++;
-        }
-         for(int i=199;i<401;i+=15)
-        {
-             addObject(new ball(),i,81);
-             j++;
-             addObject(new ball(),i,318);
-             j++;
-        }
-        for(int i=233;i<369;i+=15)
-        {
-             addObject(new ball(),i,239);
-             j++;
-             addObject(new ball(),i,161);
-             j++;
-        }
-        for(int i=177;i<237;i+=15)
-        {
-             addObject(new ball(),233,i);
-             j++;
-             addObject(new ball(),366,i);
-             j++;
-        }
-        for(int i=110;i<184;i+=15)
-        {
-             addObject(new ball(),i,29);
-             j++;
-        }
-        for(int i=199;i<280;i+=15)
-        {
-             addObject(new ball(),i,29);
-             j++;
-        }
-         for(int i=199;i<280;i+=15)
-        {
-             addObject(new ball(),i,279);
-             j++;
-        }
-        for(int i=320;i<410;i+=15)
-        {
-             addObject(new ball(),i,279);
-             j++;
-        }
-         for(int i=428;i<492;i+=15)
-        {
-             addObject(new ball(),i,360);
-             j++;
-        }
-         for(int i=169;i>108;i-=15)
-        {
-             addObject(new ball(),i,359);
-             j++;
-        }
-         for(int i=134;i<179;i+=15)
-        {
-             addObject(new ball(),i,200);
-             j++;
-        }
-         for(int i=431;i<491;i+=15)
-        {
-             addObject(new ball(),i,200);
-             j++;
-        }
-          for(int i=134;i<171;i+=15)
-        {
-             addObject(new ball(),i,279);
-             j++;
-              addObject(new ball(),i,80);
-             j++;
-        }
-         for(int i=109;i<171;i+=15)
-        {
-             addObject(new ball(),i,123);
-             j++;
-        }
-         for(int i=430;i<468;i+=15)
-        {
-             addObject(new ball(),i,80);
-             j++;
-             addObject(new ball(),i,122);
-             j++;
-              addObject(new ball(),i,279);
-             j++;
-        }
-         for(int i=230;i<277;i+=15)
-        {
-             addObject(new ball(),i,357);
-             j++;
+//         int j=0;
+//         for(int i=359;i>14;i-=15)
+//         {
+//               addObject(new ball(),414,i);
+//                 j++;
+//                addObject(new ball(),184,i);
+//                j++;
+//         }
+//         for(int i=324;i<414;i+=15)
+//         {
+//             addObject(new ball(),i,29);
+//                j++;
+//         }
+//          for(int i=429;i<504;i+=15)
+//         {
+//             addObject(new ball(),i,29);
+//                j++;
+//         }
+//         for(int i=113;i<503;i+=15)
+//         {
+//              addObject(new ball(),i,397);
+//              j++;
+//         }
+//          for(int i=199;i<401;i+=15)
+//         {
+//              addObject(new ball(),i,81);
+//              j++;
+//              addObject(new ball(),i,318);
+//              j++;
+//         }
+//         for(int i=233;i<369;i+=15)
+//         {
+//              addObject(new ball(),i,239);
+//              j++;
+//              addObject(new ball(),i,161);
+//              j++;
+//         }
+//         for(int i=177;i<237;i+=15)
+//         {
+//              addObject(new ball(),233,i);
+//              j++;
+//              addObject(new ball(),366,i);
+//              j++;
+//         }
+//         for(int i=110;i<184;i+=15)
+//         {
+//              addObject(new ball(),i,29);
+//              j++;
+//         }
+//         for(int i=199;i<280;i+=15)
+//         {
+//              addObject(new ball(),i,29);
+//              j++;
+//         }
+//          for(int i=199;i<280;i+=15)
+//         {
+//              addObject(new ball(),i,279);
+//              j++;
+//         }
+//         for(int i=320;i<410;i+=15)
+//         {
+//              addObject(new ball(),i,279);
+//              j++;
+//         }
+//          for(int i=428;i<492;i+=15)
+//         {
+//              addObject(new ball(),i,360);
+//              j++;
+//         }
+//          for(int i=169;i>108;i-=15)
+//         {
+//              addObject(new ball(),i,359);
+//              j++;
+//         }
+//          for(int i=134;i<179;i+=15)
+//         {
+//              addObject(new ball(),i,200);
+//              j++;
+//         }
+//          for(int i=431;i<491;i+=15)
+//         {
+//              addObject(new ball(),i,200);
+//              j++;
+//         }
+//           for(int i=134;i<171;i+=15)
+//         {
+//              addObject(new ball(),i,279);
+//              j++;
+//               addObject(new ball(),i,80);
+//              j++;
+//         }
+//          for(int i=109;i<171;i+=15)
+//         {
+//              addObject(new ball(),i,123);
+//              j++;
+//         }
+//          for(int i=430;i<468;i+=15)
+//         {
+//              addObject(new ball(),i,80);
+//              j++;
+//              addObject(new ball(),i,122);
+//              j++;
+//               addObject(new ball(),i,279);
+//              j++;
+//         }
+//          for(int i=230;i<277;i+=15)
+//         {
+//              addObject(new ball(),i,357);
+//              j++;
              
-        }
+//         }
           
+<<<<<<< HEAD
+//              addObject(new ball(),200,200);
+//              j++;
+//              addObject(new ball(),215,200);
+//              j++;
+//               addObject(new ball(),397,200);
+//              j++;
+//              addObject(new ball(),383,200);
+//              j++;
+//              addObject(new ball(),486,96);
+//              j++;
+//              addObject(new ball(),486,110);
+//              j++;
+//              addObject(new ball(),486,123);
+//              j++;
+//              addObject(new ball(),473,123);
+//              j++;
+//              addObject(new ball(),486,300);
+//              j++;
+//              addObject(new ball(),486,318);
+//              j++;
+//              addObject(new ball(),486,47);
+//              j++;
+//               addObject(new ball(),486,63);
+//              j++;
+//               addObject(new ball(),472,318);
+//              j++;
+//              addObject(new ball(),458,318);
+//              j++;
+//              addObject(new ball(),458,333);
+//              j++;
+//              addObject(new ball(),458,348);
+//              j++;
+//              addObject(new ball(),488,371);
+//              j++;
+//              addObject(new ball(),488,383);
+//              j++;
+//              addObject(new ball(),109,373);
+//              j++;
+//              addObject(new ball(),109,385);
+//              j++;
+//              addObject(new ball(),275,370);
+//              j++;
+//              addObject(new ball(),275,385);
+//              j++;
+//              addObject(new ball(),364,334);
+//              j++;
+//              addObject(new ball(),229,331);
+//              j++;
+//              addObject(new ball(),229,346);
+//              j++;
+//              addObject(new ball(),110,47);
+//              j++;
+//              addObject(new ball(),110,63);
+//              j++;
+//              addObject(new ball(),109,95);
+//              j++;
+//              addObject(new ball(),109,110);
+//              j++;
+//              addObject(new ball(),113,301);
+//              j++;
+//              addObject(new ball(),113,319);
+//              j++;
+//              addObject(new ball(),129,319);
+//              j++;
+//              addObject(new ball(),144,319);
+//              j++;
+//              addObject(new ball(),144,334);
+//              j++;
+//              addObject(new ball(),144,347);
+//              j++;
+=======
         /*     addObject(new ball(),200,200);
              j++;
              addObject(new ball(),215,200);
@@ -409,64 +481,202 @@ public class MyWorld extends World
              j++;
              addObject(new ball(),144,347);
              j++;
+>>>>>>> 67cd7dce1c15d5888f0e9dc0b8a9d855985dc929
              
-             addObject(new ball(),275,45);
-             j++;
-             addObject(new ball(),275,62);
-             j++;
-             addObject(new ball(),324,45);
-             j++;
-             addObject(new ball(),324,62);
-             j++;
+//              addObject(new ball(),275,45);
+//              j++;
+//              addObject(new ball(),275,62);
+//              j++;
+//              addObject(new ball(),324,45);
+//              j++;
+//              addObject(new ball(),324,62);
+//              j++;
              
-             addObject(new ball(),323,384);
-             j++;
-             addObject(new ball(),323,372);
-             j++;
-             addObject(new ball(),323,359);
-             j++;
-             addObject(new ball(),337,359);
-             j++;
+//              addObject(new ball(),323,384);
+//              j++;
+//              addObject(new ball(),323,372);
+//              j++;
+//              addObject(new ball(),323,359);
+//              j++;
+//              addObject(new ball(),337,359);
+//              j++;
              
-             addObject(new ball(),231,97);
-             j++;
-             addObject(new ball(),253,120);
-             j++;
-             addObject(new ball(),266,120);
-             j++;
-             addObject(new ball(),278,120);
-             j++;
-             addObject(new ball(),278,135);
-             j++;
-             addObject(new ball(),278,148);
-             j++;
+//              addObject(new ball(),231,97);
+//              j++;
+//              addObject(new ball(),253,120);
+//              j++;
+//              addObject(new ball(),266,120);
+//              j++;
+//              addObject(new ball(),278,120);
+//              j++;
+//              addObject(new ball(),278,135);
+//              j++;
+//              addObject(new ball(),278,148);
+//              j++;
              
-             addObject(new ball(),368,97);
-             j++;
-             addObject(new ball(),368,109);
-             j++;
-             addObject(new ball(),368,122);
-             j++;
-             addObject(new ball(),354,122);
-             j++;
-             addObject(new ball(),339,122);
-             j++;
-             addObject(new ball(),324,122);
-             j++;
-             addObject(new ball(),324,136);
-             j++;
-             addObject(new ball(),324,149);
-             j++;
+//              addObject(new ball(),368,97);
+//              j++;
+//              addObject(new ball(),368,109);
+//              j++;
+//              addObject(new ball(),368,122);
+//              j++;
+//              addObject(new ball(),354,122);
+//              j++;
+//              addObject(new ball(),339,122);
+//              j++;
+//              addObject(new ball(),324,122);
+//              j++;
+//              addObject(new ball(),324,136);
+//              j++;
+//              addObject(new ball(),324,149);
+//              j++;
              
-             addObject(new ball(),234,254);
-             j++;
-             addObject(new ball(),234,269);
-             j++;
-             addObject(new ball(),369,254);
-             j++;
-             addObject(new ball(),369,269);
-             j++;
+//              addObject(new ball(),234,254);
+//              j++;
+//              addObject(new ball(),234,269);
+//              j++;
+//              addObject(new ball(),369,254);
+//              j++;
+//              addObject(new ball(),369,269);
+//              j++;
              
+<<<<<<< HEAD
+//              addObject(new ball(),274,293);
+//              j++;
+//              addObject(new ball(),274,307);
+//              j++;
+//              addObject(new ball(),321,293);
+//              j++;
+//              addObject(new ball(),321,307);
+//              bottomRightTP bottomRightTP = new bottomRightTP();
+//             addObject(bottomRightTP,31,34);
+//             bottomLeftRightTP bottomLeftRightTP = new bottomLeftRightTP();
+//             addObject(bottomLeftRightTP,143,32);
+//             bottmLeftTP bottmLeftTP = new bottmLeftTP();
+//             addObject(bottmLeftTP,282,30);
+//             bottomRightTP bottomRightTP2 = new bottomRightTP();
+//             addObject(bottomRightTP2,359,30);
+//             bottomLeftRightTP bottomLeftRightTP2 = new bottomLeftRightTP();
+//             addObject(bottomLeftRightTP2,494,29);
+//             bottmLeftTP bottmLeftTP2 = new bottmLeftTP();
+//             addObject(bottmLeftTP2,610,32);
+//             topBottomRightTP topBottomRightTP = new topBottomRightTP();
+//             addObject(topBottomRightTP,29,108);
+//             topBottomLeftRightTP topBottomLeftRightTP = new topBottomLeftRightTP();
+//             addObject(topBottomLeftRightTP,141,108);
+//             bottomLeftRightTP bottomLeftRightTP3 = new bottomLeftRightTP();
+//             addObject(bottomLeftRightTP3,215,107);
+//             topLeftRight topLeftRight = new topLeftRight();
+//             addObject(topLeftRight,279,102);
+//             topLeftRight topLeftRight2 = new topLeftRight();
+//             addObject(topLeftRight2,352,105);
+//             bottomLeftRightTP bottomLeftRightTP4 = new bottomLeftRightTP();
+//             addObject(bottomLeftRightTP4,428,112);
+//             topBottomLeftRightTP topBottomLeftRightTP2 = new topBottomLeftRightTP();
+//             addObject(topBottomLeftRightTP2,493,104);
+//             topBottomLeftTP topBottomLeftTPI = new topBottomLeftTP();
+//             addObject(topBottomLeftTPI,607,104);
+//             topRightTP topRightTP = new topRightTP();
+//             addObject(topRightTP,31,163);
+//             topBottomLeftTP topBottomLeftTP2 = new topBottomLeftTP();
+//             addObject(topBottomLeftTP2,144,168);
+//             topRightTP topRightTP2 = new topRightTP();
+//             addObject(topRightTP2,214,164);
+//             bottmLeftTP bottmLeftTP3 = new bottmLeftTP();
+//             addObject(bottmLeftTP3,288,167);
+//             bottomRightTP bottomRightTP3 = new bottomRightTP();
+//             addObject(bottomRightTP3,359,163);
+//             topLeftTP topLeftTPI = new topLeftTP();
+//             addObject(topLeftTPI,429,163);
+//             topBottomRightTP topBottomRightTP2 = new topBottomRightTP();
+//             addObject(topBottomRightTP2,494,164);
+//             topLeftTP topLeftTP4I = new topLeftTP();
+//             addObject(topLeftTP4I,613,163);
+//             bottomRightTP bottomRightTP4 = new bottomRightTP();
+//             addObject(bottomRightTP4,216,221);
+//             topLeftRight topLeftRight3 = new topLeftRight();
+//             addObject(topLeftRight3,278,225);
+//             topLeftRight topLeftRight4 = new topLeftRight();
+//             addObject(topLeftRight4,359,225);
+//             bottmLeftTP bottmLeftTP5 = new bottmLeftTP();
+//             addObject(bottmLeftTP5,426,222);
+//             topBottomLeftRightTP topBottomLeftRightTP3 = new topBottomLeftRightTP();
+//             addObject(topBottomLeftRightTP3,139,279);
+//             topBottomLeftTP topBottomLeftTP3 = new topBottomLeftTP();
+//             addObject(topBottomLeftTP3,211,280);
+//             topBottomRightTP topBottomRightTP3 = new topBottomRightTP();
+//             addObject(topBottomRightTP3,417,278);
+//             topBottomLeftRightTP topBottomLeftRightTP4 = new topBottomLeftRightTP();
+//             addObject(topBottomLeftRightTP4,495,281);
+//             topBottomRightTP topBottomRightTP4 = new topBottomRightTP();
+//             addObject(topBottomRightTP4,218,335);
+//             topBottomLeftTP topBottomLeftTP4 = new topBottomLeftTP();
+//             addObject(topBottomLeftTP4,425,338);
+//             bottomRightTP bottomRightTP5 = new bottomRightTP();
+//             addObject(bottomRightTP5,29,392);
+//             topBottomLeftRightTP topBottomLeftRightTP5 = new topBottomLeftRightTP();
+//             addObject(topBottomLeftRightTP5,148,392);
+//             topLeftRight topLeftRight5 = new topLeftRight();
+//             addObject(topLeftRight5,223,390);
+//             bottmLeftTP bottmLeftTP6 = new bottmLeftTP();
+//             addObject(bottmLeftTP6,286,393);
+//             bottomRightTP bottomRightTP6 = new bottomRightTP();
+//             addObject(bottomRightTP6,357,397);
+//             topLeftRight topLeftRight6 = new topLeftRight();
+//             addObject(topLeftRight6,426,389);
+//             topBottomLeftRightTP topBottomLeftRightTP6 = new topBottomLeftRightTP();
+//             addObject(topBottomLeftRightTP6,494,391);
+//             bottmLeftTP bottmLeftTP7 = new bottmLeftTP();
+//             addObject(bottmLeftTP7,609,392);
+//             topRightTP topRightTP3 = new topRightTP();
+//             addObject(topRightTP3,27,449);
+//             bottmLeftTP bottmLeftTP8 = new bottmLeftTP();
+//             addObject(bottmLeftTP8,83,449);
+//             topBottomRightTP topBottomRightTP5 = new topBottomRightTP();
+//             addObject(topBottomRightTP5,153,454);
+//             bottomLeftRightTP bottomLeftRightTP5 = new bottomLeftRightTP();
+//             addObject(bottomLeftRightTP5,211,453);
+//             topLeftRight topLeftRight7 = new topLeftRight();
+//             addObject(topLeftRight7,286,449);
+//             topLeftRight topLeftRight8 = new topLeftRight();
+//             addObject(topLeftRight8,359,447);
+//             bottomLeftRightTP bottomLeftRightTP6 = new bottomLeftRightTP();
+//             addObject(bottomLeftRightTP6,430,454);
+//             topBottomLeftTP topBottomLeftTP5 = new topBottomLeftTP();
+//             addObject(topBottomLeftTP5,493,452);
+//             bottomRightTP bottomRightTP7 = new bottomRightTP();
+//             addObject(bottomRightTP7,563,452);
+//             topLeftTP topLeftTP2 = new topLeftTP();
+//             addObject(topLeftTP2,613,445);
+//             bottomRightTP bottomRightTP8 = new bottomRightTP();
+//             addObject(bottomRightTP8,28,509);
+//             topLeftRight topLeftRight9 = new topLeftRight();
+//             addObject(topLeftRight9,71,504);
+//             topLeftTP topLeftTP3 = new topLeftTP();
+//             addObject(topLeftTP3,140,508);
+//             topRightTP topRightTP4 = new topRightTP();
+//             addObject(topRightTP4,216,507);
+//             bottmLeftTP bottmLeftTP9 = new bottmLeftTP();
+//             addObject(bottmLeftTP9,286,508);
+//             bottomRightTP bottomRightTP9 = new bottomRightTP();
+//             addObject(bottomRightTP9,356,508);
+//             topLeftTP topLeftTP4 = new topLeftTP();
+//             addObject(topLeftTP4,424,506);
+//             topRightTP topRightTP5 = new topRightTP();
+//             addObject(topRightTP5,498,509);
+//             topLeftRight topLeftRight10 = new topLeftRight();
+//             addObject(topLeftRight10,563,505);
+//             bottmLeftTP bottmLeftTP10 = new bottmLeftTP();
+//             addObject(bottmLeftTP10,617,511);
+//             topRightTP topRightTP6 = new topRightTP();
+//             addObject(topRightTP6,27,562);
+//             topLeftRight topLeftRight11 = new topLeftRight();
+//             addObject(topLeftRight11,286,566);
+//             topLeftRight topLeftRight12 = new topLeftRight();
+//             addObject(topLeftRight12,358,566);
+//             topLeftTP topLeftTP5 = new topLeftTP();
+//             addObject(topLeftTP5,618,568);
+=======
              addObject(new ball(),274,293);
              j++;
              addObject(new ball(),274,307);
@@ -601,6 +811,7 @@ public class MyWorld extends World
         addObject(topLeftRight12,358,566);
         topLeftTP topLeftTP5 = new topLeftTP();
         addObject(topLeftTP5,618,568);
+>>>>>>> 67cd7dce1c15d5888f0e9dc0b8a9d855985dc929
     }
     
     
