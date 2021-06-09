@@ -24,7 +24,7 @@ public class Clyde extends ghost
               far();
           }
       }
-        move();
+      move();
     }   
     
     public void move(){
@@ -34,8 +34,8 @@ public class Clyde extends ghost
                 x = -x;
                 y = -y;
             }
-            setLocation(getX()+x, getY()+y);
         }
+        setLocation(getX()+x, getY()+y);
         /*
         public void move(){
         List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
