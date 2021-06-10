@@ -17,14 +17,14 @@ public class Pacman extends Actor
     private GreenfootImage image2;
     private int timeTillSwitch;
     private int direction = 0;
-    private CollisionDetector north = new CollisionDetector();
-    private CollisionDetector south = new CollisionDetector();
-    private CollisionDetector east = new CollisionDetector();
-    private CollisionDetector west = new CollisionDetector();
+    private CollisionDetector north = new CollisionDetectorWide();
+    private CollisionDetector south = new CollisionDetectorWide();
+    private CollisionDetector east = new CollisionDetectorLong();
+    private CollisionDetector west = new CollisionDetectorLong();
     private boolean createCollisionDetectors = true;
     public Pacman(){
-        image1 = new GreenfootImage("Pac-Man.png");
-        image2 = new GreenfootImage("pacman-solid.png");
+        image1 = new GreenfootImage("Pac-Man-test.png");
+        image2 = new GreenfootImage("pacman-solid-test.png");
         
         //image1 = new GreenfootImage("Pac-Man-test.png");
         //image2 = new GreenfootImage("pacman-solid-test.png");
@@ -97,6 +97,17 @@ public class Pacman extends Actor
                 return;
             }
             //setLocation(getX(), getY()-3);
+            
+            //snap to nearest turnpoint
+            //turnPoint nearest;
+            //for (turnPoint tp : getObjectsInRange(35, turnPoint.class)){
+            //    if (direction == 3){
+                    //left
+            //        if (tp.getX() <= getX()){
+                        
+            //        }
+            //    }
+            //}
             turnTowards(getX(), 0);
             direction = 1;
         }else{
