@@ -16,6 +16,11 @@ public class Clyde extends ghost
      */
     public void act() 
     {
+      if(isTouching(teleportPointLeft.class)){
+          setLocation(600, getY());
+      }else if(isTouching(teleportPointRight.class)){
+          setLocation(44, getY());
+      }
       List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
       for(Pacman p: pm){
           if(Math.abs(getX()-p.getX())<30&&Math.abs(getY()-p.getY())<30){
