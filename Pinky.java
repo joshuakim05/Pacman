@@ -20,6 +20,11 @@ public class Pinky extends ghost
     private int pacy;
     public void act() 
     {
+      if(isTouching(teleportPointLeft.class)){
+          setLocation(600, getY());
+      }else if(isTouching(teleportPointRight.class)){
+          setLocation(44, getY());
+      }
         target();
         setLocation(getX()+x, getY()+y);
     }  

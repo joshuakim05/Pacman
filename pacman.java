@@ -26,8 +26,8 @@ public class Pacman extends Actor
         image1 = new GreenfootImage("Pac-Man.png");
         image2 = new GreenfootImage("pacman-solid.png");
         
-        image1 = new GreenfootImage("Pac-Man-test.png");
-        image2 = new GreenfootImage("pacman-solid-test.png");
+        //image1 = new GreenfootImage("Pac-Man-test.png");
+        //image2 = new GreenfootImage("pacman-solid-test.png");
         timeTillSwitch = 30;
         north.setLocation(0, 0);
         
@@ -35,6 +35,11 @@ public class Pacman extends Actor
     
     public void act() 
     {
+      if(isTouching(teleportPointLeft.class)){
+          setLocation(600, getY());
+      }else if(isTouching(teleportPointRight.class)){
+          setLocation(44, getY());
+      }
         if (createCollisionDetectors){
             getWorld().addObject(north, getX(), getY() - getImage().getWidth() / 2);
             getWorld().addObject(south, getX(), getY() + getImage().getWidth() / 2);

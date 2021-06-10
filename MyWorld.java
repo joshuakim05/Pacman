@@ -218,7 +218,7 @@ public class MyWorld extends World
         addObject(borderTLeftBottom,161,538);
         BorderTTopBottom borderTTopBottom = new BorderTTopBottom();
         addObject(borderTTopBottom,185,501);
-        
+
         //Bottom right T
         BorderTRightBottom borderTRightBottom = new BorderTRightBottom();
         addObject(borderTRightBottom,492,538);
@@ -689,142 +689,154 @@ public class MyWorld extends World
              //addObject(man.getBigBall3(),486,78);
              //addObject(man.getBigBall4(),486,280);
         bottomRightTP bottomRightTP = new bottomRightTP();
-        addObject(bottomRightTP,31,34);
+        addObject(bottomRightTP,24,24);
         bottomLeftRightTP bottomLeftRightTP = new bottomLeftRightTP();
-        addObject(bottomLeftRightTP,143,32);
+        addObject(bottomLeftRightTP,147,24);
         bottmLeftTP bottmLeftTP = new bottmLeftTP();
-        addObject(bottmLeftTP,282,30);
+        addObject(bottmLeftTP,286,24);
         bottomRightTP bottomRightTP2 = new bottomRightTP();
-        addObject(bottomRightTP2,359,30);
+        addObject(bottomRightTP2,358,24);
         bottomLeftRightTP bottomLeftRightTP2 = new bottomLeftRightTP();
-        addObject(bottomLeftRightTP2,494,29);
+        addObject(bottomLeftRightTP2,497,24);
         bottmLeftTP bottmLeftTP2 = new bottmLeftTP();
-        addObject(bottmLeftTP2,610,32);
+        addObject(bottmLeftTP2,620,24);
+        //second row
         topBottomRightTP topBottomRightTP = new topBottomRightTP();
-        addObject(topBottomRightTP,29,108);
+        addObject(topBottomRightTP,24,106);
         topBottomLeftRightTP topBottomLeftRightTP = new topBottomLeftRightTP();
-        addObject(topBottomLeftRightTP,141,108);
+        addObject(topBottomLeftRightTP,147,106);
         bottomLeftRightTP bottomLeftRightTP3 = new bottomLeftRightTP();
-        addObject(bottomLeftRightTP3,215,107);
+        addObject(bottomLeftRightTP3,218,106);
         topLeftRight topLeftRight = new topLeftRight();
-        addObject(topLeftRight,279,102);
+        addObject(topLeftRight,286,106);
         topLeftRight topLeftRight2 = new topLeftRight();
-        addObject(topLeftRight2,352,105);
+        addObject(topLeftRight2,358,106);
         bottomLeftRightTP bottomLeftRightTP4 = new bottomLeftRightTP();
-        addObject(bottomLeftRightTP4,428,112);
+        addObject(bottomLeftRightTP4,429,106);
         topBottomLeftRightTP topBottomLeftRightTP2 = new topBottomLeftRightTP();
-        addObject(topBottomLeftRightTP2,493,104);
+        addObject(topBottomLeftRightTP2,497,106);
         topBottomLeftTP topBottomLeftTPI = new topBottomLeftTP();
-        addObject(topBottomLeftTPI,607,104);
+        addObject(topBottomLeftTPI,620,106);
+        //third row
         topRightTP topRightTP = new topRightTP();
-        addObject(topRightTP,31,163);
+        addObject(topRightTP,24,165);
         topBottomLeftTP topBottomLeftTP2 = new topBottomLeftTP();
-        addObject(topBottomLeftTP2,144,168);
+        addObject(topBottomLeftTP2,147,165);
         topRightTP topRightTP2 = new topRightTP();
-        addObject(topRightTP2,214,164);
+        addObject(topRightTP2,218,165);
         bottmLeftTP bottmLeftTP3 = new bottmLeftTP();
-        addObject(bottmLeftTP3,288,167);
+        addObject(bottmLeftTP3,286,165);
         bottomRightTP bottomRightTP3 = new bottomRightTP();
-        addObject(bottomRightTP3,359,163);
+        addObject(bottomRightTP3,358,165);
         topLeftTP topLeftTPI = new topLeftTP();
-        addObject(topLeftTPI,429,163);
+        addObject(topLeftTPI,429,165);
         topBottomRightTP topBottomRightTP2 = new topBottomRightTP();
-        addObject(topBottomRightTP2,494,164);
+        addObject(topBottomRightTP2,497,165);
         topLeftTP topLeftTP4I = new topLeftTP();
-        addObject(topLeftTP4I,613,163);
+        addObject(topLeftTP4I,620,165);
+        //fourth row
         bottomRightTP bottomRightTP4 = new bottomRightTP();
-        addObject(bottomRightTP4,216,221);
+        addObject(bottomRightTP4,218,224);
         topLeftRight topLeftRight3 = new topLeftRight();
-        addObject(topLeftRight3,278,225);
+        addObject(topLeftRight3,286,224);
         topLeftRight topLeftRight4 = new topLeftRight();
-        addObject(topLeftRight4,359,225);
+        addObject(topLeftRight4,358,224);
         bottmLeftTP bottmLeftTP5 = new bottmLeftTP();
-        addObject(bottmLeftTP5,426,222);
+        addObject(bottmLeftTP5,429,224);
+        //fifth row
         topBottomLeftRightTP topBottomLeftRightTP3 = new topBottomLeftRightTP();
-        addObject(topBottomLeftRightTP3,139,279);
+        addObject(topBottomLeftRightTP3,147,279);
         topBottomLeftTP topBottomLeftTP3 = new topBottomLeftTP();
-        addObject(topBottomLeftTP3,211,280);
+        addObject(topBottomLeftTP3,218,279);
         topBottomRightTP topBottomRightTP3 = new topBottomRightTP();
-        addObject(topBottomRightTP3,417,278);
+        addObject(topBottomRightTP3,429,279);
         topBottomLeftRightTP topBottomLeftRightTP4 = new topBottomLeftRightTP();
-        addObject(topBottomLeftRightTP4,495,281);
+        addObject(topBottomLeftRightTP4,499,279);
+        //sixth 
         topBottomRightTP topBottomRightTP4 = new topBottomRightTP();
-        addObject(topBottomRightTP4,218,335);
+        addObject(topBottomRightTP4,218,339);
         topBottomLeftTP topBottomLeftTP4 = new topBottomLeftTP();
-        addObject(topBottomLeftTP4,425,338);
+        addObject(topBottomLeftTP4,429,339);
+        //seventh
         bottomRightTP bottomRightTP5 = new bottomRightTP();
-        addObject(bottomRightTP5,29,392);
+        addObject(bottomRightTP5,24,393);
         topBottomLeftRightTP topBottomLeftRightTP5 = new topBottomLeftRightTP();
-        addObject(topBottomLeftRightTP5,148,392);
+        addObject(topBottomLeftRightTP5,147,393);
         topLeftRight topLeftRight5 = new topLeftRight();
-        addObject(topLeftRight5,223,390);
+        addObject(topLeftRight5,218,393);
         bottmLeftTP bottmLeftTP6 = new bottmLeftTP();
         addObject(bottmLeftTP6,286,393);
         bottomRightTP bottomRightTP6 = new bottomRightTP();
-        addObject(bottomRightTP6,357,397);
+        addObject(bottomRightTP6,358,393);
         topLeftRight topLeftRight6 = new topLeftRight();
-        addObject(topLeftRight6,426,389);
+        addObject(topLeftRight6,429,393);
         topBottomLeftRightTP topBottomLeftRightTP6 = new topBottomLeftRightTP();
-        addObject(topBottomLeftRightTP6,494,391);
+        addObject(topBottomLeftRightTP6,497,393);
         bottmLeftTP bottmLeftTP7 = new bottmLeftTP();
-        addObject(bottmLeftTP7,609,392);
+        addObject(bottmLeftTP7,620,393);
+        //eight
         topRightTP topRightTP3 = new topRightTP();
-        addObject(topRightTP3,27,449);
+        addObject(topRightTP3,24,449);
         bottmLeftTP bottmLeftTP8 = new bottmLeftTP();
-        addObject(bottmLeftTP8,83,449);
+        addObject(bottmLeftTP8,78,449);
         topBottomRightTP topBottomRightTP5 = new topBottomRightTP();
-        addObject(topBottomRightTP5,153,454);
+        addObject(topBottomRightTP5,147,449);
         bottomLeftRightTP bottomLeftRightTP5 = new bottomLeftRightTP();
-        addObject(bottomLeftRightTP5,211,453);
+        addObject(bottomLeftRightTP5,218,449);
         topLeftRight topLeftRight7 = new topLeftRight();
         addObject(topLeftRight7,286,449);
         topLeftRight topLeftRight8 = new topLeftRight();
-        addObject(topLeftRight8,359,447);
+        addObject(topLeftRight8,358,449);
         bottomLeftRightTP bottomLeftRightTP6 = new bottomLeftRightTP();
-        addObject(bottomLeftRightTP6,430,454);
+        addObject(bottomLeftRightTP6,429,449);
         topBottomLeftTP topBottomLeftTP5 = new topBottomLeftTP();
-        addObject(topBottomLeftTP5,493,452);
+        addObject(topBottomLeftTP5,497,449);
         bottomRightTP bottomRightTP7 = new bottomRightTP();
-        addObject(bottomRightTP7,563,452);
+        addObject(bottomRightTP7,567,449);
         topLeftTP topLeftTP2 = new topLeftTP();
-        addObject(topLeftTP2,613,445);
+        addObject(topLeftTP2,620,449);
+        //ninth
         bottomRightTP bottomRightTP8 = new bottomRightTP();
-        addObject(bottomRightTP8,28,509);
+        addObject(bottomRightTP8,24,506);
         topLeftRight topLeftRight9 = new topLeftRight();
-        addObject(topLeftRight9,71,504);
+        addObject(topLeftRight9,78,506);
         topLeftTP topLeftTP3 = new topLeftTP();
-        addObject(topLeftTP3,140,508);
+        addObject(topLeftTP3,147,506);
         topRightTP topRightTP4 = new topRightTP();
-        addObject(topRightTP4,216,507);
+        addObject(topRightTP4,218,506);
         bottmLeftTP bottmLeftTP9 = new bottmLeftTP();
-        addObject(bottmLeftTP9,286,508);
+        addObject(bottmLeftTP9,286,506);
         bottomRightTP bottomRightTP9 = new bottomRightTP();
-        addObject(bottomRightTP9,356,508);
+        addObject(bottomRightTP9,358,506);
         topLeftTP topLeftTP4 = new topLeftTP();
-        addObject(topLeftTP4,424,506);
+        addObject(topLeftTP4,429,506);
         topRightTP topRightTP5 = new topRightTP();
-        addObject(topRightTP5,498,509);
+        addObject(topRightTP5,497,506);
         topLeftRight topLeftRight10 = new topLeftRight();
-        addObject(topLeftRight10,563,505);
+        addObject(topLeftRight10,567,506);
         bottmLeftTP bottmLeftTP10 = new bottmLeftTP();
-        addObject(bottmLeftTP10,617,511);
+        addObject(bottmLeftTP10,620,506);
+        //tenth
         topRightTP topRightTP6 = new topRightTP();
-        addObject(topRightTP6,27,562);
+        addObject(topRightTP6,24,568);
         topLeftRight topLeftRight11 = new topLeftRight();
-        addObject(topLeftRight11,286,566);
+        addObject(topLeftRight11,286,568);
         topLeftRight topLeftRight12 = new topLeftRight();
-        addObject(topLeftRight12,358,566);
+        addObject(topLeftRight12,358,568);
         topLeftTP topLeftTP5 = new topLeftTP();
-        addObject(topLeftTP5,618,568);
-
+        addObject(topLeftTP5,620,568);
+        //
+        teleportPointLeft teleportPointLeft = new teleportPointLeft();
+        addObject(teleportPointLeft,2,278);
+        teleportPointRight teleportPointRight = new teleportPointRight();
+        addObject(teleportPointRight,637,278);
     }
     
     
     //         // Size is at scale width 28, heigh 31, numbers can be changed but scale should stay the same
     //         //super(812, 899, 1); 
     //         //setBackground("background.png");
-        
-        }
+}
         
 
 
