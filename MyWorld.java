@@ -683,9 +683,17 @@ public class MyWorld extends World
         addObject(topLeftTP5,620,568);
         //
         teleportPointLeft teleportPointLeft = new teleportPointLeft();
-        addObject(teleportPointLeft,2,278);
+        addObject(teleportPointLeft,13,278);
         teleportPointRight teleportPointRight = new teleportPointRight();
         addObject(teleportPointRight,637,278);
+        topBoundry topBoundry = new topBoundry();
+        addObject(topBoundry,321,5);
+        bottomBoundry bottomBoundry = new bottomBoundry();
+        addObject(bottomBoundry,322,623);
+        leftBoundry leftBoundry = new leftBoundry();
+        addObject(leftBoundry,9,324);
+        rightBoundry rightBoundry = new rightBoundry();
+        addObject(rightBoundry,641,325);
     }
     
     
