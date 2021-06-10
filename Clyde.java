@@ -10,6 +10,10 @@ public class Clyde extends ghost
 {
     private int x;
     private int y;
+    
+    public Clyde(){
+    
+    }
     /**
      * Act - do whatever the Clyde wants to do. This method is calle( whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,9 +32,42 @@ public class Clyde extends ghost
           }else{
               far();
           }
+          if(isTouching(topBoundry.class)){
+              setLocation(getX(), 24);
+              if(p.getX()>getX()){
+                  x=4;
+              }else{
+                  x=-4;
+              }
+          }
+          if(isTouching(bottomBoundry.class)){
+              setLocation(getX(), 568);
+              if(p.getX()>getX()){
+                  x=4;
+              }else{
+                  x=-4;
+              }
+          }
+          if(isTouching(leftBoundry.class)){
+              setLocation(getY(), 24);
+              if(p.getY()>getY()){
+                  y=4;
+              }else{
+                  y=-4;
+              }
+          }
+          if(isTouching(rightBoundry.class)){
+              setLocation(getY(), 620);
+              if(p.getY()>getY()){
+                  y=4;
+              }else{
+                  y=-4;
+              }
+          }
       }
       move();
-    }   
+    }
+       
     
     public void move(){
         List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
@@ -286,5 +323,4 @@ public class Clyde extends ghost
             }
         }
     }
-    
 }
