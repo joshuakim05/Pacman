@@ -60,10 +60,23 @@ public class Pacman extends Actor
             setLocation(getX(), getY()+3);
         } else if (direction == 3 && !west.intersectingBorder()){
             //left
+            if (west.intersectingTeleportWall()){
+                setLocation(getWorld().getWidth() - 30, getY());
+                return;
+            }
+            
             setLocation(getX()-3, getY());
+            
         } else if (direction == 4 && !east.intersectingBorder()){
             //right
+            
+            if (east.intersectingTeleportWall()){
+                setLocation(30, getY());
+                return;
+            }
             setLocation(getX()+3, getY());
+            
+            
         }
         
         
@@ -111,6 +124,8 @@ public class Pacman extends Actor
                 west.setLocation(getX() - 30, getY());
                 return;
             }
+            
+            
             //setLocation(getX()-3, getY());
             turnTowards(0, getY());
             direction = 3;

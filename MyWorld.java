@@ -339,7 +339,7 @@ public class MyWorld extends World
              
 //         }
           
-<<<<<<< HEAD
+
 //              addObject(new ball(),200,200);
 //              j++;
 //              addObject(new ball(),215,200);
@@ -410,7 +410,7 @@ public class MyWorld extends World
 //              j++;
 //              addObject(new ball(),144,347);
 //              j++;
-=======
+
         /*     addObject(new ball(),200,200);
              j++;
              addObject(new ball(),215,200);
@@ -481,7 +481,7 @@ public class MyWorld extends World
              j++;
              addObject(new ball(),144,347);
              j++;
->>>>>>> 67cd7dce1c15d5888f0e9dc0b8a9d855985dc929
+
              
 //              addObject(new ball(),275,45);
 //              j++;
@@ -539,8 +539,7 @@ public class MyWorld extends World
 //              j++;
 //              addObject(new ball(),369,269);
 //              j++;
-             
-<<<<<<< HEAD
+
 //              addObject(new ball(),274,293);
 //              j++;
 //              addObject(new ball(),274,307);
@@ -676,13 +675,19 @@ public class MyWorld extends World
 //             addObject(topLeftRight12,358,566);
 //             topLeftTP topLeftTP5 = new topLeftTP();
 //             addObject(topLeftTP5,618,568);
-=======
+
              addObject(new ball(),274,293);
              j++;
              addObject(new ball(),274,307);
              j++;
              addObject(new ball(),321,293);
              j++;*/
+             
+             //add powerup balls
+             //addObject(man.getBigBall1(),113,78);
+             //addObject(man.getBigBall2(),113,280);
+             //addObject(man.getBigBall3(),486,78);
+             //addObject(man.getBigBall4(),486,280);
         bottomRightTP bottomRightTP = new bottomRightTP();
         addObject(bottomRightTP,31,34);
         bottomLeftRightTP bottomLeftRightTP = new bottomLeftRightTP();
@@ -811,7 +816,7 @@ public class MyWorld extends World
         addObject(topLeftRight12,358,566);
         topLeftTP topLeftTP5 = new topLeftTP();
         addObject(topLeftTP5,618,568);
->>>>>>> 67cd7dce1c15d5888f0e9dc0b8a9d855985dc929
+
     }
     
     
