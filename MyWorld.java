@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-   
+    private int score = 0;
+    private int lives;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -18,14 +19,73 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(645, 650, 1); 
         prepare();
+        lives = 3;
+        showLives();
+        showScore();
+        die();
     }
-
+    
+    public void showScore(){
+        showText("Score: " + score, 550, 620);
+    }
+    
+    public void showLives(){
+        showText("Lives: " + lives, 50, 620);
+    }
+    
+    public void addScore(int points){
+        score+=points;
+        showScore();
+    }
+    
+    public void die(){
+        lives--;
+        if(lives>0){
+            List<Pacman> pm = getObjects(Pacman.class);
+            for(Pacman p: pm){
+                p.setLocation(323, 450);
+            }
+            List<Blinky> b = getObjects(Blinky.class);
+            for(Blinky g: b){
+                g.setLocation(24, 24);
+            }
+            List<Clyde> c = getObjects(Clyde.class);
+            for(Clyde g: c){
+                g.setLocation(24, 568);
+            }
+            List<Inky> i = getObjects(Inky.class);
+            for(Inky g: i){
+                g.setLocation(620, 568);
+            }
+            List<Pinky> p = getObjects(Pinky.class);
+            for(Pinky g: p){
+                g.setLocation(620, 24);
+            }
+        }else{
+            showText("Game Over! Press space to play again", 322, 280);
+            if(Greenfoot.isKeyDown("space")){
+                prepare();
+            }
+        }
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
+        Pacman pacman = new Pacman();
+        addObject(pacman, 323, 450);
+        Blinky blinky = new Blinky();
+        addObject(blinky, 24, 24);
+        Clyde clyde = new Clyde();
+        addObject(clyde, 24, 568);
+        Inky inky = new Inky();
+        addObject(inky, 620, 568);
+        Pinky pinky = new Pinky();
+        addObject(pinky, 620, 24);
+        
         BorderLong borderLong = new BorderLong();
         addObject(borderLong,325,586);
         BorderLong borderLong2 = new BorderLong();
@@ -827,9 +887,17 @@ public class MyWorld extends World
         addObject(topLeftTP5,620,568);
         //
         teleportPointLeft teleportPointLeft = new teleportPointLeft();
-        addObject(teleportPointLeft,2,278);
+        addObject(teleportPointLeft,13,278);
         teleportPointRight teleportPointRight = new teleportPointRight();
         addObject(teleportPointRight,637,278);
+        topBoundry topBoundry = new topBoundry();
+        addObject(topBoundry,321,5);
+        bottomBoundry bottomBoundry = new bottomBoundry();
+        addObject(bottomBoundry,322,623);
+        leftBoundry leftBoundry = new leftBoundry();
+        addObject(leftBoundry,9,324);
+        rightBoundry rightBoundry = new rightBoundry();
+        addObject(rightBoundry,641,325);
     }
     
     

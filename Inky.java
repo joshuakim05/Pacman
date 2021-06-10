@@ -14,6 +14,10 @@ public class Inky extends ghost
     private int roty;
     private int pacx;
     private int pacy;
+    
+    public Inky(){
+    
+    }
     public void act() 
     {
       if(isTouching(teleportPointLeft.class)){
@@ -21,8 +25,41 @@ public class Inky extends ghost
       }else if(isTouching(teleportPointRight.class)){
           setLocation(44, getY());
       }
+      if(isTouching(topBoundry.class)){
+          setLocation(getX(), 24);
+          if(pacx>getX()){
+              x=4;
+            }else{
+                x=-4;
+            }
+        }
+      if(isTouching(bottomBoundry.class)){
+          setLocation(getX(), 568);
+          if(pacx>getX()){
+              x=4;
+          }else{
+              x=-4;
+          }
+      }
+      if(isTouching(leftBoundry.class)){
+          setLocation(getY(), 24);
+          if(pacy>getY()){
+              y=4;
+            }else{
+                y=-4;
+            }
+      }
+      if(isTouching(rightBoundry.class)){
+          setLocation(getY(), 620);
+          if(pacy>getY()){
+              y=4;
+          }else{
+              y=-4;
+          }
+      }
         getTarget();
         setLocation(getX()+x,getY()+y);
+        
     }  
     
     public void getTarget(){
@@ -283,5 +320,4 @@ public class Inky extends ghost
             }
         }
     }
-    
 }

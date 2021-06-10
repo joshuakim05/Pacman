@@ -11,6 +11,10 @@ public class Blinky extends ghost
 {
     private int x;
     private int y;
+    
+    public Blinky(){
+    
+    }
     /**
      * Act - do whatever the Blinky wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -29,10 +33,41 @@ public class Blinky extends ghost
           }else{
               far();
           }
-      }
-       setLocation(getX()+x, getY()+y);
-       
-    }   
+          if(isTouching(topBoundry.class)){
+              setLocation(getX(), 24);
+              if(p.getX()>getX()){
+                  x=4;
+              }else{
+                  x=-4;
+              }
+          }
+          if(isTouching(bottomBoundry.class)){
+              setLocation(getX(), 568);
+              if(p.getX()>getX()){
+                  x=4;
+              }else{
+                  x=-4;
+              }
+          }
+          if(isTouching(leftBoundry.class)){
+              setLocation(getY(), 24);
+              if(p.getY()>getY()){
+                  y=4;
+              }else{
+                  y=-4;
+              }
+          }
+          if(isTouching(rightBoundry.class)){
+              setLocation(getY(), 620);
+              if(p.getY()>getY()){
+                  y=4;
+              }else{
+                  y=-4;
+              }
+          }
+        }
+        setLocation(getX()+x, getY()+y);
+    }
     
     public void far(){
         List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
@@ -254,5 +289,4 @@ public class Blinky extends ghost
             }
         }
     }
-    
 }
