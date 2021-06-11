@@ -124,7 +124,6 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        level = 1;
         lives = 3;
         showLevel();
         showLives();
@@ -252,12 +251,21 @@ public class MyWorld extends World
         addObject(borderShort29,getWidth() - 5,548);
         borderShort29.setRotation(90);
 
-        BorderSide borderSide = new BorderSide();
-        addObject(borderSide,30,474);
-        BorderSide borderSide2 = new BorderSide();
-        addObject(borderSide2,599,466);
-        borderSide2.setRotation(180);
-        borderSide2.setLocation(616,476);
+        //BorderSide borderSide = new BorderSide();
+        //addObject(borderSide,30,474);
+        //BorderSide borderSide2 = new BorderSide();
+        //addObject(borderSide2,599,466);
+        //borderSide2.setRotation(180);
+        //borderSide2.setLocation(616,476);
+        
+        BorderSide1 borderSide1 = new BorderSide1();
+        addObject(borderSide1,5 ,476);
+        BorderSide2 borderSide2 = new BorderSide2();
+        addObject(borderSide2,33,479);
+        BorderSide3 borderSide3 = new BorderSide3();
+        addObject(borderSide3,642,476);
+        BorderSide4 borderSide4 = new BorderSide4();
+        addObject(borderSide4,613,479);
 
         BorderRoundMedium borderRoundMedium = new BorderRoundMedium();
         addObject(borderRoundMedium,88,67);
@@ -1540,7 +1548,7 @@ public class MyWorld extends World
         addObject(ball276,568,565);
         ball ball277 = new ball();
         addObject(ball277,590,565);
-        
+
         ball ball278 = new ball();
         addObject(ball278,289,527);
         ball ball279 = new ball();
@@ -1549,6 +1557,28 @@ public class MyWorld extends World
         addObject(ball280,358,526);
         ball ball281 = new ball();
         addObject(ball281,358,545);
+
+        //Ghost spawn
+        GhostSpawnPiece ghostSpawnPiece = new GhostSpawnPiece();
+        addObject(ghostSpawnPiece,275,244);
+        GhostSpawnPiece ghostSpawnPiece2 = new GhostSpawnPiece();
+        addObject(ghostSpawnPiece2,373,244);
+        GhostSpawnLong ghostSpawnLong = new GhostSpawnLong();
+        addObject(ghostSpawnLong,323,311);
+
+        GhostSpawnVertical ghostSpawnVertical = new GhostSpawnVertical();
+        addObject(ghostSpawnVertical,244,272);
+        GhostSpawnVertical ghostSpawnVertical2 = new GhostSpawnVertical();
+        addObject(ghostSpawnVertical2,244,283);
+
+        GhostSpawnVertical ghostSpawnVertical3 = new GhostSpawnVertical();
+        addObject(ghostSpawnVertical3,402,272);
+        GhostSpawnVertical ghostSpawnVertical4 = new GhostSpawnVertical();
+        addObject(ghostSpawnVertical4,402,283);
+        GhostSpawnDoor ghostSpawnDoor = new GhostSpawnDoor();
+        addObject(ghostSpawnDoor,324,244);
+
+        
     }
     
     
