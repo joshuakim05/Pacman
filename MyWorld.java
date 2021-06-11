@@ -150,6 +150,8 @@ public class MyWorld extends World
         showScore();
         Pacman pacman = new Pacman();
         addObject(pacman, 323, 450);
+        pacmanStart pS = new pacmanStart();
+        addObject(pS, 323, 450);
         Blinky blinky = new Blinky();
         addObject(blinky, 24, 24);
         Clyde clyde = new Clyde();

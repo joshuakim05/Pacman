@@ -17,6 +17,8 @@ public class Pacman extends Actor
     private GreenfootImage image2;
     private int timeTillSwitch;
     private int direction = 0;
+    private int x;
+    private int y;
     private CollisionDetector north = new CollisionDetectorWide();
     private CollisionDetector south = new CollisionDetectorWide();
     private CollisionDetector east = new CollisionDetectorLong();
@@ -57,10 +59,10 @@ public class Pacman extends Actor
         
         
         
-        up();
+        //up();
 
         
-        if (direction == 1 && !north.intersectingBorder()){
+        /*if (direction == 1 && !north.intersectingBorder()){
             //move up
             
             for (int i = 0; i < 10; i++){
@@ -93,14 +95,13 @@ public class Pacman extends Actor
                 setLocation(30, getY());
                 return;
             }
-            for (int i = 0; i < 10; i++){
-                changeImage();
-            }
-            setLocation(getX()+3, getY());
             
             
-        }
-        
+            
+        }*/
+        move();
+        changeImage();
+        setLocation(getX()+x, getY()+y);
         previousX = getX();
         previousY = getY();
         
@@ -205,9 +206,145 @@ public class Pacman extends Actor
         
     }
     
-    
-    
-    
-    
-    
+    private void move(){
+            if (isTouching(pacmanStart.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -3;
+                    y = 0;
+                    turnTowards(0, getY());
+                }else if(Greenfoot.isKeyDown("right")){
+                    y = 0;
+                    x = 3;
+                    turnTowards(645, getY());
+                }
+            }
+            if (isTouching(bottmLeftTP.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -3;
+                    y = 0;
+                    turnTowards(0, getY());
+                }else if(Greenfoot.isKeyDown("down")){
+                    y = 3;
+                    x = 0;
+                    turnTowards(getX(), 650);
+                }
+            }
+            if (isTouching(bottomLeftRightTP.class)){
+                if(!Greenfoot.isKeyDown("down")){
+                    if (Greenfoot.isKeyDown("left")){
+                        x = -3;
+                        turnTowards(0, getY());
+                    }else if(Greenfoot.isKeyDown("right")){
+                        x = 3;
+                        turnTowards(645, getY());
+                    }
+                    y = 0;
+                }else if (Greenfoot.isKeyDown("down")){
+                    y = 3;
+                    x = 0;
+                    turnTowards(getX(), 650);
+                }
+            }
+            if (isTouching(bottomRightTP.class)){
+                if(Greenfoot.isKeyDown("right")){
+                    x = 3;
+                    y = 0;
+                    turnTowards(645, getY());
+                }else if(Greenfoot.isKeyDown("down")){
+                    y = 3;
+                    x = 0;
+                    turnTowards(getX(), 650);
+                }
+            }
+            if (isTouching(topBottomRightTP.class)){
+                if(Greenfoot.isKeyDown("right")){
+                    x = 3;
+                    y = 0;turnTowards(645, getY());
+                }else{
+                    if (Greenfoot.isKeyDown("up")){
+                        y = -3;
+                        turnTowards(getX(), 0);
+                    }else if (Greenfoot.isKeyDown("down")){
+                        y= 3;
+                        turnTowards(getX(), 650);
+                    }  
+                    x = 0;            
+                }
+            }
+            if (isTouching(topBottomLeftRightTP.class)){
+                if(Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("left")){
+                    if (Greenfoot.isKeyDown("left")){
+                        x = -3;
+                        turnTowards(0, getY());
+                    }else if (Greenfoot.isKeyDown("right")){
+                        x= 3;
+                        turnTowards(650, getY());
+                    } 
+                    y = 0;
+                }else{
+                    if (Greenfoot.isKeyDown("up")){
+                        y = -3;
+                        turnTowards(getX(), 0);
+                    }else if (Greenfoot.isKeyDown("down")){
+                        y= 3;
+                        turnTowards(getX(), 650);
+                    } 
+                    x = 0;
+                }
+            }
+            if (isTouching(topBottomLeftTP.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -3;
+                    y = 0;
+                    turnTowards(0, getY());
+                }else{
+                    if (Greenfoot.isKeyDown("up")){
+                        y = -3;
+                        turnTowards(getX(), 0);
+                    }else if (Greenfoot.isKeyDown("down")){
+                        y= 3;
+                        turnTowards(getX(), 650);
+                    } 
+                    x = 0;
+                }
+            }
+            if (isTouching(topLeftRight.class)){
+                if(!Greenfoot.isKeyDown("up")){
+                    if (Greenfoot.isKeyDown("left")){
+                        x = -3;
+                        turnTowards(0, getY());
+                    }else if(Greenfoot.isKeyDown("right")){
+                        x= 3;
+                        turnTowards(650, getY());
+                    } 
+                    y = 0;
+                }else if (Greenfoot.isKeyDown("up")){
+                    y = -3;
+                    x = 0;
+                    turnTowards(getX(), 0);
+                }
+            }
+            if (isTouching(topLeftTP.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x= -3;
+                    y = 0;
+                    turnTowards(0, getY());
+                }else if (Greenfoot.isKeyDown("up")){
+                    y = -3;
+                    x = 0;
+                    turnTowards(getX(), 0);
+                }
+            }
+            if (isTouching(topRightTP.class)){
+                if(Greenfoot.isKeyDown("right")){
+                    x= 3;
+                    y = 0;
+                    turnTowards(645, getY());
+                }else if (Greenfoot.isKeyDown("up")){
+                    y = -3;
+                    x = 0;
+                    turnTowards(getX(), 0);
+                }
+            }
+    }
 }
