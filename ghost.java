@@ -35,6 +35,7 @@ public class ghost extends Actor
         
         updateCollisionDetectors();
         
+        
     }    
     
     private void updateCollisionDetectors(){
@@ -44,4 +45,14 @@ public class ghost extends Actor
         east.setLocation(getX() + getImage().getWidth() / 2, getY());
         west.setLocation(getX() - getImage().getWidth() / 2, getY());
     }
+    
+    public void catchPacman(){
+        if (getObjectsInRange(20, Pacman.class).size() > 0){
+            ((MyWorld) getWorld()).die();
+            
+        }
+    }
+    
+    
+    
 }

@@ -22,6 +22,8 @@ public class Pacman extends Actor
     private CollisionDetector east = new CollisionDetectorLong();
     private CollisionDetector west = new CollisionDetectorLong();
     private boolean createCollisionDetectors = true;
+    private int previousX = 323;
+    private int previousY = 450;
     public Pacman(){
         image1 = new GreenfootImage("Pac-Man-test.png");
         image2 = new GreenfootImage("pacman-solid-test.png");
@@ -31,6 +33,10 @@ public class Pacman extends Actor
         timeTillSwitch = 30;
         north.setLocation(0, 0);
         
+    }
+    
+    public int getDirection(){
+        return direction;
     }
     
     public void act() 
@@ -52,37 +58,51 @@ public class Pacman extends Actor
         
         
         up();
-        changeImage();
-        
+
         
         if (direction == 1 && !north.intersectingBorder()){
             //move up
             
-            
+            for (int i = 0; i < 10; i++){
+                changeImage();
+            }
             setLocation(getX(), getY()-3);
         } else if (direction == 2 && !south.intersectingBorder()){
             //down
+            for (int i = 0; i < 10; i++){
+                changeImage();
+            }
             setLocation(getX(), getY()+3);
         } else if (direction == 3 && !west.intersectingBorder()){
             //left
+            
             if (west.intersectingTeleportWall()){
                 setLocation(getWorld().getWidth() - 30, getY());
                 return;
             }
-            
+            for (int i = 0; i < 10; i++){
+                changeImage();
+            }
             setLocation(getX()-3, getY());
             
         } else if (direction == 4 && !east.intersectingBorder()){
             //right
             
+            
             if (east.intersectingTeleportWall()){
                 setLocation(30, getY());
                 return;
+            }
+            for (int i = 0; i < 10; i++){
+                changeImage();
             }
             setLocation(getX()+3, getY());
             
             
         }
+        
+        previousX = getX();
+        previousY = getY();
         
         
     }    
@@ -181,7 +201,13 @@ public class Pacman extends Actor
         south.setLocation(getX(), getY() + getImage().getWidth() / 2);
         east.setLocation(getX() + getImage().getWidth() / 2, getY());
         west.setLocation(getX() - getImage().getWidth() / 2, getY());
+        
+        
     }
+    
+    
+    
+    
     
     
 }

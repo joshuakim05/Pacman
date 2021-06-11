@@ -20,6 +20,7 @@ public class Inky extends ghost
     }
     public void act() 
     {
+      catchPacman();
       if(isTouching(teleportPointLeft.class)){
           setLocation(600, getY());
       }else if(isTouching(teleportPointRight.class)){

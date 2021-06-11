@@ -21,6 +21,9 @@ public class Blinky extends ghost
      */
     public void act() 
     {
+      
+      catchPacman();
+      
       if(isTouching(teleportPointLeft.class)){
           setLocation(600, getY());
       }else if(isTouching(teleportPointRight.class)){
@@ -65,6 +68,8 @@ public class Blinky extends ghost
                   y=-4;
               }
           }
+          
+          
         }
         setLocation(getX()+x, getY()+y);
     }
