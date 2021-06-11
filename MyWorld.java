@@ -43,13 +43,14 @@ public class MyWorld extends World
     public void addScore(int points){
         score+=points;
         showScore();
-        if (score%2810 == 0){
+        if (score%2180==0){
             lives++;
+            showLives();
+            win();
         }
     }
     
     public void act(){
-        checkWin();
         if (lives == 0){
             if (Greenfoot.isKeyDown("space")){
                 Greenfoot.setWorld(new MyWorld());        
@@ -109,13 +110,31 @@ public class MyWorld extends World
         }
     }
         
-    public void checkWin(){
-        if(getObjects(ball.class) == null){
-            pastLevel++;
-            Greenfoot.setWorld(new MyWorld());
-            level += pastLevel;
-            showLevel();
+    public void win(){
+        pastLevel++;
+        List<Pacman> pm = getObjects(Pacman.class);
+        for(Pacman p: pm){
+            p.getWorld().removeObject(p);
         }
+        List<Blinky> b = getObjects(Blinky.class);
+        for(Blinky g: b){
+            g.getWorld().removeObject(g);
+        }
+        List<Clyde> c = getObjects(Clyde.class);
+        for(Clyde g: c){
+            g.getWorld().removeObject(g);
+        }
+        List<Inky> i = getObjects(Inky.class);
+        for(Inky g: i){
+            g.getWorld().removeObject(g);
+        }
+        List<Pinky> p = getObjects(Pinky.class);
+        for(Pinky g: p){
+            g.getWorld().removeObject(g);
+        }
+        prepare();
+        level += pastLevel;
+        showLevel();
     }
     
     /**
@@ -125,6 +144,7 @@ public class MyWorld extends World
     private void prepare()
     {
         lives = 3;
+        level = 1;
         showLevel();
         showLives();
         showScore();
