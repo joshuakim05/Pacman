@@ -18,7 +18,7 @@ public class Pinky extends ghost
     private int roty;
     private int pacx;
     private int pacy;
-    
+    public int countdown = 180;
     public Pinky(){
     
     }
@@ -62,8 +62,21 @@ public class Pinky extends ghost
               y=-4;
           }
       }
+      if (isTouching(GhostStart.class)){
+          if(getX()>pacx){
+              x = -3;
+              y = 0;
+            }else{
+                y = 0;
+                x = 3;
+            }
+      }
         target();
         setLocation(getX()+x, getY()+y);
+      countdown--;
+      if (countdown == 0){
+            setLocation(322, 224);
+        }
     }  
     
     public void target(){
