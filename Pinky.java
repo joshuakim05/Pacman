@@ -12,8 +12,8 @@ public class Pinky extends ghost
      * Act - do whatever the Pinky wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int x;
-    private int y;
+    public int x;
+    public int y;
     private int rotx;
     private int roty;
     private int pacx;

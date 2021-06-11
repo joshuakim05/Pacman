@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     private int score = 0;
     private int lives;
+    private int level;
+    private int pastLevel=0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,7 +24,12 @@ public class MyWorld extends World
         lives = 3;
         showLives();
         showScore();
+        showLevel();
         //die();
+    }
+    
+    public void showLevel(){
+        showText("Level: " + level, 323, 620);
     }
     
     public void showScore(){
@@ -36,14 +43,16 @@ public class MyWorld extends World
     public void addScore(int points){
         score+=points;
         showScore();
+        if (score%2810 == 0){
+            lives++;
+        }
     }
     
     public void act(){
-        if (lives <= 0){
-            showText("Game Over! Press space to play again", 322, 280);
+        checkWin();
+        if (lives == 0){
             if (Greenfoot.isKeyDown("space")){
-                Greenfoot.setWorld(new MyWorld());
-
+                Greenfoot.setWorld(new MyWorld());        
             }
         }
     }
@@ -71,19 +80,43 @@ public class MyWorld extends World
         for(Pinky g: p){
             g.setLocation(620, 24);
         }
-        
-        
         if (lives <= 0){
             showText("Game Over! Press space to play again", 322, 280);
-            if (Greenfoot.isKeyDown("space")){
-                Greenfoot.setWorld(new MyWorld());
-
+            pastLevel = 0;
+            for(Pacman s: pm){
+                s.getWorld().removeObject(s);
+            }
+            for(Blinky s: b){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+            }
+            for(Clyde s: c){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+            }
+            for(Inky s: i){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+            }
+            for(Pinky s: p){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
             }
         }
-            
-        }
+    }
         
-    
+    public void checkWin(){
+        if(getObjects(ball.class) == null){
+            pastLevel++;
+            Greenfoot.setWorld(new MyWorld());
+            level += pastLevel;
+            showLevel();
+        }
+    }
     
     /**
      * Prepare the world for the start of the program.
@@ -91,8 +124,9 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        
+        level = 1;
         lives = 3;
+        showLevel();
         showLives();
         showScore();
         Pacman pacman = new Pacman();

@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Inky extends ghost
 {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
     private int rotx;
     private int roty;
     private int pacx;

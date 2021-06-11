@@ -25,8 +25,8 @@ public class Pacman extends Actor
     private int previousX = 323;
     private int previousY = 450;
     public Pacman(){
-        image1 = new GreenfootImage("Pac-Man-test.png");
-        image2 = new GreenfootImage("pacman-solid-test.png");
+        image1 = new GreenfootImage("Pac-Man.png");
+        image2 = new GreenfootImage("pacman-solid.png");
         
         //image1 = new GreenfootImage("Pac-Man-test.png");
         //image2 = new GreenfootImage("pacman-solid-test.png");

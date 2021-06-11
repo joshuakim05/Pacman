@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Clyde extends ghost
 {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
     
     public Clyde(){
     

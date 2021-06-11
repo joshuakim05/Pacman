@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Blinky extends ghost
 {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
     
     public Blinky(){
     
