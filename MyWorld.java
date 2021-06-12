@@ -14,6 +14,7 @@ public class MyWorld extends World
     private int pastLevel=0;
     private int highscore;
     private int pelletCheck = 0;
+    private int timer;
     private boolean powerPellet = false;
     /**
      * Constructor for objects of class MyWorld.
@@ -38,6 +39,9 @@ public class MyWorld extends World
     
     public void setPowerPellet(boolean b){
         powerPellet = b;
+        if(powerPellet){
+            timer = 550;
+        }
     }
     
     public void showLevel(){
@@ -112,6 +116,10 @@ public class MyWorld extends World
         }
         checkWin();
         higherscore();
+        if(timer == 0){
+            powerPellet = false;
+        }
+        timer--;
     }
     
     public void die(){

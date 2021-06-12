@@ -68,9 +68,16 @@ public class Inky extends ghost
                 x = 4;
             }
       }
-        getTarget();
-        setLocation(getX()+x,getY()+y);
-        
+      World w = getWorld();
+      MyWorld b = (MyWorld) w;
+      if (b.isPowerPellet()){
+        random();
+        setImage("ghost-vulnerable.png");
+      }else{
+          setImage("Inky.png");
+          getTarget();
+      }
+      setLocation(getX()+x,getY()+y);
     }  
     
     public void getTarget(){
@@ -331,6 +338,137 @@ public class Inky extends ghost
             }else{
                 y = -4;
                 x = 0;
+            }
+        }
+    }
+    public void random(){
+        if (isTouching(bottmLeftTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x = -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(bottomLeftRightTP.class)){
+            if(Greenfoot.getRandomNumber(3)!=0){
+                if (Greenfoot.getRandomNumber(2) == 1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x = 4;
+                    setLocation(getX()+21, getY());
+                }
+                y = 0;
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(bottomRightTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x = 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(topBottomRightTP.class)){
+            if(Greenfoot.getRandomNumber(3)==0){
+                x = 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                if (Greenfoot.getRandomNumber(2)==1){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                }  
+                x = 0;  
+            }
+        }
+        if (isTouching(topBottomLeftRightTP.class)){
+            if(Greenfoot.getRandomNumber(2) == 0){
+                if (Greenfoot.getRandomNumber(2)==1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x= 4;
+                    setLocation(getX()+21, getY());
+                } 
+                y = 0;
+            }else{
+                if (Greenfoot.getRandomNumber(2)== 1){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                } 
+                x = 0;
+            }
+        }
+        if (isTouching(topBottomLeftTP.class)){
+            if(Greenfoot.getRandomNumber(3) == 0){
+                x = -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                if (Greenfoot.getRandomNumber(2) == 0){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                } 
+                x = 0;
+            }
+        }
+        if (isTouching(topLeftRight.class)){
+            if(Greenfoot.getRandomNumber(3)!=0){
+                if (Greenfoot.getRandomNumber(2)==1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x= 4;
+                    setLocation(getX()+21, getY());
+                }
+                y = 0;
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
+            }
+        }
+        if (isTouching(topLeftTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x= -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
+            }
+        }
+        if (isTouching(topRightTP.class)){
+            if(Greenfoot.getRandomNumber(2)==0){
+                x= 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
             }
         }
     }

@@ -31,25 +31,34 @@ public class Clyde extends ghost
           setLocation(44, getY());
       }
       List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
-      for(Pacman p: pm){
-        
-          if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
-              targetx = 24;
-              targety = 568;
+      World w = getWorld();
+      MyWorld b = (MyWorld) w;
+      if (b.isPowerPellet()){
+        random();
+        setImage("ghost-vulnerable.png");
+      }else{
+        setImage("Clyde.png");
+        for(Pacman p: pm){
+            if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
+                targetx = 24;
+                targety = 568;
             }else{
                 targetx = p.getX();
                 targety = p.getY();
                 if(Math.abs(getX()-p.getX())<=84 && Math.abs(getY()-p.getY())<=84){
-                    targetx = 24;
-                    targety = 568;
+                     targetx = 24;
+                     targety = 568;
                 }
-          }
-            
-          if(Math.abs(getX()-targetx)<30&&Math.abs(getY()-targety)<30){
+            }
+        }
+        if(Math.abs(getX()-targetx)<30&&Math.abs(getY()-targety)<30){
               close();
-          }else{
-              far();
-          }
+        }else{
+            far();
+        }
+        scatter--;
+      }
+      for(Pacman p: pm){
           if (isTouching(GhostStart.class)){
                 if(getX()>targetx){
                     x = -4;
@@ -95,7 +104,6 @@ public class Clyde extends ghost
               }
               x = 0;
           }
-          scatter--;
       }
       move();
       countdown--;
@@ -349,6 +357,137 @@ public class Clyde extends ghost
                     y = -4;
                     x = 0;
                 }
+            }
+        }
+    }
+    public void random(){
+        if (isTouching(bottmLeftTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x = -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(bottomLeftRightTP.class)){
+            if(Greenfoot.getRandomNumber(3)!=0){
+                if (Greenfoot.getRandomNumber(2) == 1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x = 4;
+                    setLocation(getX()+21, getY());
+                }
+                y = 0;
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(bottomRightTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x = 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(topBottomRightTP.class)){
+            if(Greenfoot.getRandomNumber(3)==0){
+                x = 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                if (Greenfoot.getRandomNumber(2)==1){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                }  
+                x = 0;  
+            }
+        }
+        if (isTouching(topBottomLeftRightTP.class)){
+            if(Greenfoot.getRandomNumber(2) == 0){
+                if (Greenfoot.getRandomNumber(2)==1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x= 4;
+                    setLocation(getX()+21, getY());
+                } 
+                y = 0;
+            }else{
+                if (Greenfoot.getRandomNumber(2)== 1){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                } 
+                x = 0;
+            }
+        }
+        if (isTouching(topBottomLeftTP.class)){
+            if(Greenfoot.getRandomNumber(3) == 0){
+                x = -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                if (Greenfoot.getRandomNumber(2) == 0){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                } 
+                x = 0;
+            }
+        }
+        if (isTouching(topLeftRight.class)){
+            if(Greenfoot.getRandomNumber(3)!=0){
+                if (Greenfoot.getRandomNumber(2)==1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x= 4;
+                    setLocation(getX()+21, getY());
+                }
+                y = 0;
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
+            }
+        }
+        if (isTouching(topLeftTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x= -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
+            }
+        }
+        if (isTouching(topRightTP.class)){
+            if(Greenfoot.getRandomNumber(2)==0){
+                x= 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
             }
         }
     }
