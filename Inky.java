@@ -16,6 +16,7 @@ public class Inky extends ghost
     private int pacx;
     private int pacy;
     public int countdown = 500;
+    public int scatter = 400;
     public Inky(){
     
     }
@@ -76,6 +77,7 @@ public class Inky extends ghost
       }else{
           setImage("Inky.png");
           getTarget();
+          scatter--;
       }
       setLocation(getX()+x,getY()+y);
     }  
@@ -115,6 +117,10 @@ public class Inky extends ghost
             } else{
                 y = 4;
             }*/
+            if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
+                pacx = 620;
+                pacy = 568;
+            }
             if(Math.abs(getX()-p.getX())<30&&Math.abs(getY()-p.getY())<30){
               close();
           }else{
@@ -124,6 +130,7 @@ public class Inky extends ghost
         countdown--;
         if (countdown == 0){
             setLocation(322, 224);
+            scatter = 400;
         }
     }   
     

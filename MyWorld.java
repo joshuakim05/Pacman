@@ -135,6 +135,7 @@ public class MyWorld extends World
         for(Blinky g: b){
             g.setLocation(272, 280);
             g.countdown = 30;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -142,6 +143,7 @@ public class MyWorld extends World
         for(Clyde g: c){
             g.setLocation(303, 279);
             g.countdown = 300;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -149,6 +151,7 @@ public class MyWorld extends World
         for(Inky g: i){
             g.setLocation(344, 284);
             g.countdown = 500;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -156,6 +159,7 @@ public class MyWorld extends World
         for(Pinky g: p){
             g.setLocation(378, 284);
             g.countdown = 180;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -238,15 +242,19 @@ public class MyWorld extends World
         addObject(pS, 323, 450);
         Blinky blinky = new Blinky();
         blinky.countdown = 30;
+        blinky.scatter = 400;
         addObject(blinky, 24, 24);
         Clyde clyde = new Clyde();
         clyde.countdown = 300;
+        clyde.scatter = 400;
         addObject(clyde, 24, 568);
         Inky inky = new Inky();
         inky.countdown = 500;
+        inky.scatter = 400;
         addObject(inky, 620, 568);
         Pinky pinky = new Pinky();
         pinky.countdown = 180;
+        pinky.scatter=400;
         addObject(pinky, 620, 24);
 
         blinky.setLocation(272,280);

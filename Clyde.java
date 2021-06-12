@@ -109,6 +109,7 @@ public class Clyde extends ghost
       countdown--;
       if (countdown == 0){
             setLocation(322, 224);
+            scatter = 400;
         }
     }
        
