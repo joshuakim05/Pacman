@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Blinky extends ghost
 {
+    //top right
     public int x;
     public int y;
     public int countdown = 30;
@@ -34,9 +35,13 @@ public class Blinky extends ghost
       }
       List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
       for(Pacman p: pm){
-          targetx = p.getX();
-          targety = p.getY();
-          
+          if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
+              targetx = 620;
+              targety = 24;
+            }else{
+                targetx = p.getX();
+                targety = p.getY();
+            }
           if(Math.abs(getX()-targetx)<30&&Math.abs(getY()-targety)<30){
                close();
             }else{

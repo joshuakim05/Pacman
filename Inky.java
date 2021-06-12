@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class Inky extends ghost
 {
+    //bottom right
     public int x;
     public int y;
     private int rotx;

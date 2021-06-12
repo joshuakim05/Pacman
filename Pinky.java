@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class Pinky extends ghost
 {
+    //top left
     /**
      * Act - do whatever the Pinky wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
