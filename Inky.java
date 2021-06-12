@@ -60,11 +60,11 @@ public class Inky extends ghost
       }
       if (isTouching(GhostStart.class)){
           if(getX()>pacx){
-              x = -3;
+              x = -4;
               y = 0;
             }else{
                 y = 0;
-                x = 3;
+                x = 4;
             }
       }
         getTarget();

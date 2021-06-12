@@ -12,6 +12,8 @@ public class MyWorld extends World
     private int lives;
     private int level;
     private int pastLevel=0;
+    private int highscore;
+    private int pelletCheck = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -25,11 +27,16 @@ public class MyWorld extends World
         showLives();
         showScore();
         showLevel();
+        showHighscore();
         //die();
     }
     
     public void showLevel(){
-        showText("Level: " + level, 323, 620);
+        showText("Level: " + level, 242, 620);
+    }
+    
+    public void showHighscore(){
+        showText("Highscore: " + highscore, 404, 620);
     }
     
     public void showScore(){
@@ -43,19 +50,58 @@ public class MyWorld extends World
     public void addScore(int points){
         score+=points;
         showScore();
-        if (score%2180==0){
+    }
+    
+    public void checkWin(){
+        pelletCheck = 0;
+        List<ball> b = getObjects(ball.class);
+        for(ball p: b){
+            pelletCheck++;
+        }
+        if (pelletCheck==0){
             lives++;
             showLives();
             win();
         }
     }
     
+    public void higherscore(){
+        if (score>highscore){
+            highscore = score;
+            showHighscore();
+        }
+    }
+    
     public void act(){
         if (lives == 0){
-            if (Greenfoot.isKeyDown("space")){
-                Greenfoot.setWorld(new MyWorld());        
+            if(Greenfoot.isKeyDown("space")){
+                List<Pacman> pm = getObjects(Pacman.class);
+                List<Blinky> b = getObjects(Blinky.class);
+                List<Clyde> c = getObjects(Clyde.class);
+                List<Inky> i = getObjects(Inky.class);
+                List<Pinky> p = getObjects(Pinky.class);
+                for(Pacman s: pm){
+                    s.getWorld().removeObject(s);
+                }
+                for(Blinky s: b){
+                    s.getWorld().removeObject(s);
+                }
+                for(Clyde s: c){
+                    s.getWorld().removeObject(s);
+                }
+                for(Inky s: i){
+                    s.getWorld().removeObject(s);
+                }
+                for(Pinky s: p){
+                    s.getWorld().removeObject(s);
+                }
+                showText(null, 322, 280); 
+                prepare();
+                lives = 3;
             }
         }
+        checkWin();
+        higherscore();
     }
     
     public void die(){
@@ -163,8 +209,8 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        lives = 3;
         level = 1;
+        score = 0;
         showLevel();
         showLives();
         showScore();
@@ -1222,7 +1268,6 @@ public class MyWorld extends World
         addObject(ball90,613,125);
         ball ball91 = new ball();
         addObject(ball91,613,145);
-        topLeftTP2.setLocation(613,165);
         ball ball92 = new ball();
         addObject(ball92,613,165);
 

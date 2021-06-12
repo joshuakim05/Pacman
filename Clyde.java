@@ -35,11 +35,11 @@ public class Clyde extends ghost
           }
           if (isTouching(GhostStart.class)){
                 if(getX()>p.getX()){
-                    x = -3;
+                    x = -4;
                     y = 0;
                 }else{
                     y = 0;
-                    x = 3;
+                    x = 4;
                 }
           }
           if(isTouching(topBoundry.class)){
