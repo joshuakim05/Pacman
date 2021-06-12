@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class pacman here.
  * 
@@ -17,6 +17,8 @@ public class Pacman extends Actor
     private GreenfootImage image2;
     private int timeTillSwitch;
     private int direction = 0;
+    public int x;
+    public int y;
     private CollisionDetector north = new CollisionDetectorWide();
     private CollisionDetector south = new CollisionDetectorWide();
     private CollisionDetector east = new CollisionDetectorLong();
@@ -25,8 +27,8 @@ public class Pacman extends Actor
     private int previousX = 323;
     private int previousY = 450;
     public Pacman(){
-        image1 = new GreenfootImage("Pac-Man-test.png");
-        image2 = new GreenfootImage("pacman-solid-test.png");
+        image1 = new GreenfootImage("Pac-Man.png");
+        image2 = new GreenfootImage("pacman-solid.png");
         
         //image1 = new GreenfootImage("Pac-Man-test.png");
         //image2 = new GreenfootImage("pacman-solid-test.png");
@@ -57,10 +59,10 @@ public class Pacman extends Actor
         
         
         
-        up();
+        //up();
 
         
-        if (direction == 1 && !north.intersectingBorder()){
+        /*if (direction == 1 && !north.intersectingBorder()){
             //move up
             
             for (int i = 0; i < 10; i++){
@@ -93,14 +95,13 @@ public class Pacman extends Actor
                 setLocation(30, getY());
                 return;
             }
-            for (int i = 0; i < 10; i++){
-                changeImage();
-            }
-            setLocation(getX()+3, getY());
             
             
-        }
-        
+            
+        }*/
+        move();
+        changeImage();
+        setLocation(getX()+x, getY()+y);
         previousX = getX();
         previousY = getY();
         
@@ -205,9 +206,179 @@ public class Pacman extends Actor
         
     }
     
-    
-    
-    
-    
-    
+    private void move(){
+            if (isTouching(pacmanStart.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -4;
+                    y = 0;
+                    turnTowards(0, getY());
+                    
+                }else if(Greenfoot.isKeyDown("right")){
+                    y = 0;
+                    x = 4;
+                    turnTowards(645, getY());
+                }
+                setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+            }
+            if (isTouching(leftRight.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -4;
+                    y = 0;
+                    turnTowards(0, getY());
+                }else if(Greenfoot.isKeyDown("right")){
+                    y = 0;
+                    x = 4;
+                    turnTowards(645, getY());
+                }
+                setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+            }
+            if (isTouching(bottmLeftTP.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -4;
+                    y = 0;
+                    turnTowards(0, getY());
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else if(Greenfoot.isKeyDown("down")){
+                    y = 4;
+                    x = 0;
+                    turnTowards(getX(), 650);
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(),getY());
+                }
+            }
+            if (isTouching(bottomLeftRightTP.class)){
+                if(!Greenfoot.isKeyDown("down")){
+                    if (Greenfoot.isKeyDown("left")){
+                        x = -3;
+                        turnTowards(0, getY());
+                        
+                    }else if(Greenfoot.isKeyDown("right")){
+                        x = 4;
+                        turnTowards(645, getY());
+                    }
+                    y = 0;
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else if (Greenfoot.isKeyDown("down")){
+                    y = 4;
+                    x = 0;
+                    turnTowards(getX(), 650);
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(),getY());
+                }
+                
+            }
+            if (isTouching(bottomRightTP.class)){
+                if(Greenfoot.isKeyDown("right")){
+                    x = 4;
+                    y = 0;
+                    turnTowards(645, getY());
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else if(Greenfoot.isKeyDown("down")){
+                    y = 4;
+                    x = 0;
+                    turnTowards(getX(), 650);
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(),getY());
+                }
+            }
+            if (isTouching(topBottomRightTP.class)){
+                if(Greenfoot.isKeyDown("right")){
+                    x = 4;
+                    y = 0;turnTowards(645, getY());
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else{
+                    if (Greenfoot.isKeyDown("up")){
+                        y = -4;
+                        turnTowards(getX(), 0);
+                    }else if (Greenfoot.isKeyDown("down")){
+                        y= 4;
+                        turnTowards(getX(), 650);
+                    }  
+                    x = 0;
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(),getY());            
+                }
+            }
+            if (isTouching(topBottomLeftRightTP.class)){
+                if(Greenfoot.isKeyDown("right")||Greenfoot.isKeyDown("left")){
+                    if (Greenfoot.isKeyDown("left")){
+                        x = -4;
+                        turnTowards(0, getY());
+                    }else if (Greenfoot.isKeyDown("right")){
+                        x= 4;
+                        turnTowards(650, getY());
+                    } 
+                    y = 0;
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else{
+                    if (Greenfoot.isKeyDown("up")){
+                        y = -4;
+                        turnTowards(getX(), 0);
+                    }else if (Greenfoot.isKeyDown("down")){
+                        y= 4;
+                        turnTowards(getX(), 650);
+                    } 
+                    x = 0;
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(), getY());
+                }                
+            }
+            if (isTouching(topBottomLeftTP.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x = -4;
+                    y = 0;
+                    turnTowards(0, getY());
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else{
+                    if (Greenfoot.isKeyDown("up")){
+                        y = -4;
+                        turnTowards(getX(), 0);
+                    }else if (Greenfoot.isKeyDown("down")){
+                        y= 4;
+                        turnTowards(getX(), 650);
+                    } 
+                    x = 0;
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(), getY());
+                } 
+            }
+            if (isTouching(topLeftRight.class)){
+                if(!Greenfoot.isKeyDown("up")){
+                    if (Greenfoot.isKeyDown("left")){
+                        x = -4;
+                        turnTowards(0, getY());
+                    }else if(Greenfoot.isKeyDown("right")){
+                        x= 4;
+                        turnTowards(650, getY());
+                    } 
+                    y = 0;
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else if (Greenfoot.isKeyDown("up")){
+                    y = -4;
+                    x = 0;
+                    turnTowards(getX(), 0);
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(), getY());
+                }
+            }
+            if (isTouching(topLeftTP.class)){
+                if(Greenfoot.isKeyDown("left")){
+                    x= -4;
+                    y = 0;
+                    turnTowards(0, getY());
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else if (Greenfoot.isKeyDown("up")){
+                    y = -4;
+                    x = 0;
+                    turnTowards(getX(), 0);
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(), getY());
+                }
+            }
+            if (isTouching(topRightTP.class)){
+                if(Greenfoot.isKeyDown("right")){
+                    x= 4;
+                    y = 0;
+                    turnTowards(645, getY());
+                    setLocation(getX(), getOneIntersectingObject(turnPoint.class).getY());
+                }else if (Greenfoot.isKeyDown("up")){
+                    y = -4;
+                    x = 0;
+                    turnTowards(getX(), 0);
+                    setLocation(getOneIntersectingObject(turnPoint.class).getX(), getY());
+                }
+            }
+    }
 }

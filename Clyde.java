@@ -8,9 +8,9 @@ import java.util.List;
  */
 public class Clyde extends ghost
 {
-    private int x;
-    private int y;
-    
+    public int x;
+    public int y;
+    public int countdown = 300;
     public Clyde(){
     
     }
@@ -32,6 +32,15 @@ public class Clyde extends ghost
               close();
           }else{
               far();
+          }
+          if (isTouching(GhostStart.class)){
+                if(getX()>p.getX()){
+                    x = -3;
+                    y = 0;
+                }else{
+                    y = 0;
+                    x = 3;
+                }
           }
           if(isTouching(topBoundry.class)){
               setLocation(getX(), 24);
@@ -67,6 +76,10 @@ public class Clyde extends ghost
           }
       }
       move();
+      countdown--;
+      if (countdown == 0){
+            setLocation(322, 224);
+        }
     }
        
     

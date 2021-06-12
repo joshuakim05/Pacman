@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     private int score = 0;
     private int lives;
+    private int level;
+    private int pastLevel=0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,7 +24,12 @@ public class MyWorld extends World
         lives = 3;
         showLives();
         showScore();
+        showLevel();
         //die();
+    }
+    
+    public void showLevel(){
+        showText("Level: " + level, 323, 620);
     }
     
     public void showScore(){
@@ -36,14 +43,17 @@ public class MyWorld extends World
     public void addScore(int points){
         score+=points;
         showScore();
+        if (score%2180==0){
+            lives++;
+            showLives();
+            win();
+        }
     }
     
     public void act(){
-        if (lives <= 0){
-            showText("Game Over! Press space to play again", 322, 280);
+        if (lives == 0){
             if (Greenfoot.isKeyDown("space")){
-                Greenfoot.setWorld(new MyWorld());
-
+                Greenfoot.setWorld(new MyWorld());        
             }
         }
     }
@@ -54,36 +64,98 @@ public class MyWorld extends World
         List<Pacman> pm = getObjects(Pacman.class);
         for(Pacman p: pm){
             p.setLocation(323, 450);
+            p.x = 0;
+            p.y = 0;
         }
         List<Blinky> b = getObjects(Blinky.class);
         for(Blinky g: b){
-            g.setLocation(24, 24);
+            g.setLocation(272, 280);
+            g.countdown = 30;
+            g.x = 0;
+            g.y = 0;
         }
         List<Clyde> c = getObjects(Clyde.class);
         for(Clyde g: c){
-            g.setLocation(24, 568);
+            g.setLocation(303, 279);
+            g.countdown = 300;
+            g.x = 0;
+            g.y = 0;
         }
         List<Inky> i = getObjects(Inky.class);
         for(Inky g: i){
-            g.setLocation(620, 568);
+            g.setLocation(344, 284);
+            g.countdown = 500;
+            g.x = 0;
+            g.y = 0;
         }
         List<Pinky> p = getObjects(Pinky.class);
         for(Pinky g: p){
-            g.setLocation(620, 24);
+            g.setLocation(378, 284);
+            g.countdown = 180;
+            g.x = 0;
+            g.y = 0;
         }
-        
-        
         if (lives <= 0){
             showText("Game Over! Press space to play again", 322, 280);
-            if (Greenfoot.isKeyDown("space")){
-                Greenfoot.setWorld(new MyWorld());
-
+            pastLevel = 0;
+            for(Pacman s: pm){
+                s.getWorld().removeObject(s);
+                s.x = 0;
+                s.y = 0;
+            }
+            for(Blinky s: b){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+                s.countdown = -1;
+            }
+            for(Clyde s: c){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+                s.countdown = -1;
+            }
+            for(Inky s: i){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+                s.countdown = -1;
+            }
+            for(Pinky s: p){
+                s.setLocation(323, 450);
+                s.x = 0;
+                s.y = 0;
+                s.countdown = -1;
             }
         }
-            
-        }
+    }
         
-    
+    public void win(){
+        pastLevel++;
+        List<Pacman> pm = getObjects(Pacman.class);
+        for(Pacman p: pm){
+            p.getWorld().removeObject(p);
+        }
+        List<Blinky> b = getObjects(Blinky.class);
+        for(Blinky g: b){
+            g.getWorld().removeObject(g);
+        }
+        List<Clyde> c = getObjects(Clyde.class);
+        for(Clyde g: c){
+            g.getWorld().removeObject(g);
+        }
+        List<Inky> i = getObjects(Inky.class);
+        for(Inky g: i){
+            g.getWorld().removeObject(g);
+        }
+        List<Pinky> p = getObjects(Pinky.class);
+        for(Pinky g: p){
+            g.getWorld().removeObject(g);
+        }
+        prepare();
+        level += pastLevel;
+        showLevel();
+    }
     
     /**
      * Prepare the world for the start of the program.
@@ -91,21 +163,33 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-
         lives = 3;
+        level = 1;
+        showLevel();
         showLives();
         showScore();
         Pacman pacman = new Pacman();
         addObject(pacman, 323, 450);
+        pacmanStart pS = new pacmanStart();
+        addObject(pS, 323, 450);
         Blinky blinky = new Blinky();
+        blinky.countdown = 30;
         addObject(blinky, 24, 24);
         Clyde clyde = new Clyde();
+        clyde.countdown = 300;
         addObject(clyde, 24, 568);
         Inky inky = new Inky();
+        inky.countdown = 500;
         addObject(inky, 620, 568);
         Pinky pinky = new Pinky();
+        pinky.countdown = 180;
         addObject(pinky, 620, 24);
 
+        blinky.setLocation(272,280);
+        clyde.setLocation(303,279);
+        pinky.setLocation(344,284);
+        inky.setLocation(378,284);
+        
         BorderLong borderLong = new BorderLong();
         addObject(borderLong,325,586);
         BorderLong borderLong2 = new BorderLong();
@@ -224,7 +308,7 @@ public class MyWorld extends World
         //addObject(borderSide2,599,466);
         //borderSide2.setRotation(180);
         //borderSide2.setLocation(616,476);
-        
+
         BorderSide1 borderSide1 = new BorderSide1();
         addObject(borderSide1,5 ,476);
         BorderSide2 borderSide2 = new BorderSide2();
@@ -826,6 +910,8 @@ public class MyWorld extends World
         addObject(bottomRightTP4,218,224);
         topLeftRight topLeftRight3 = new topLeftRight();
         addObject(topLeftRight3,286,224);
+        GhostStart gs = new GhostStart();
+        addObject(gs, 322, 224);
         topLeftRight topLeftRight4 = new topLeftRight();
         addObject(topLeftRight4,358,224);
         bottmLeftTP bottmLeftTP5 = new bottmLeftTP();
@@ -906,10 +992,22 @@ public class MyWorld extends World
         //tenth
         topRightTP topRightTP6 = new topRightTP();
         addObject(topRightTP6,24,568);
+        leftRight leftRight = new leftRight();
+        addObject(leftRight,78,568);
+        leftRight leftRight2 = new leftRight();
+        addObject(leftRight2,147,568);
+        leftRight leftRight3 = new leftRight();
+        addObject(leftRight3,218,568);
         topLeftRight topLeftRight11 = new topLeftRight();
         addObject(topLeftRight11,286,568);
         topLeftRight topLeftRight12 = new topLeftRight();
         addObject(topLeftRight12,358,568);
+        leftRight leftRight4 = new leftRight();
+        addObject(leftRight4,429,586);
+        leftRight leftRight5 = new leftRight();
+        addObject( leftRight5,497, 568);
+        leftRight leftRight6 = new leftRight();
+        addObject(leftRight6,567,568);
         topLeftTP topLeftTP5 = new topLeftTP();
         addObject(topLeftTP5,620,568);
         //
@@ -1544,8 +1642,6 @@ public class MyWorld extends World
         addObject(ghostSpawnVertical4,402,283);
         GhostSpawnDoor ghostSpawnDoor = new GhostSpawnDoor();
         addObject(ghostSpawnDoor,324,244);
-
-        
     }
     
     

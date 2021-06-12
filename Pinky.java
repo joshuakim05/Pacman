@@ -12,13 +12,13 @@ public class Pinky extends ghost
      * Act - do whatever the Pinky wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int x;
-    private int y;
+    public int x;
+    public int y;
     private int rotx;
     private int roty;
     private int pacx;
     private int pacy;
-    
+    public int countdown = 180;
     public Pinky(){
     
     }
@@ -62,8 +62,21 @@ public class Pinky extends ghost
               y=-4;
           }
       }
+      if (isTouching(GhostStart.class)){
+          if(getX()>pacx){
+              x = -3;
+              y = 0;
+            }else{
+                y = 0;
+                x = 3;
+            }
+      }
         target();
         setLocation(getX()+x, getY()+y);
+      countdown--;
+      if (countdown == 0){
+            setLocation(322, 224);
+        }
     }  
     
     public void target(){

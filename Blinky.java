@@ -9,9 +9,9 @@ import java.util.List;
  */
 public class Blinky extends ghost
 {
-    private int x;
-    private int y;
-    
+    public int x;
+    public int y;
+    public int countdown = 30;
     public Blinky(){
     
     }
@@ -35,6 +35,15 @@ public class Blinky extends ghost
               close();
           }else{
               far();
+          }
+          if (isTouching(GhostStart.class)){
+                if(getX()>p.getX()){
+                    x = -3;
+                    y = 0;
+                }else{
+                    y = 0;
+                    x = 3;
+                }
           }
           if(isTouching(topBoundry.class)){
               setLocation(getX(), 24);
@@ -72,6 +81,10 @@ public class Blinky extends ghost
           
         }
         setLocation(getX()+x, getY()+y);
+        countdown--;
+        if (countdown == 0){
+            setLocation(322, 224);
+        }
     }
     
     public void far(){
