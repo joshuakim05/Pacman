@@ -98,6 +98,7 @@ public class MyWorld extends World
                 showText(null, 322, 280); 
                 prepare();
                 lives = 3;
+                showLives();
             }
         }
         checkWin();
