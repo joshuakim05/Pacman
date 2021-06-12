@@ -13,6 +13,7 @@ public class bigBall extends Actor
             //Greenfoot.playSound("eat_pellet.wav");
             world.addScore(50);
             world.removeObject(this);
+            world.setPowerPellet(true);
         }
         
     }
