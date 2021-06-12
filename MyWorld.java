@@ -14,6 +14,7 @@ public class MyWorld extends World
     private int pastLevel=0;
     private int highscore;
     private int pelletCheck = 0;
+    private boolean powerPellet = false;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -29,6 +30,14 @@ public class MyWorld extends World
         showLevel();
         showHighscore();
         //die();
+    }
+    
+    public boolean isPowerPellet(){
+        return powerPellet;
+    }
+    
+    public void setPowerPellet(boolean b){
+        powerPellet = b;
     }
     
     public void showLevel(){
@@ -236,7 +245,7 @@ public class MyWorld extends World
         clyde.setLocation(303,279);
         pinky.setLocation(344,284);
         inky.setLocation(378,284);
-        
+
         BorderLong borderLong = new BorderLong();
         addObject(borderLong,325,586);
         BorderLong borderLong2 = new BorderLong();
@@ -1688,6 +1697,23 @@ public class MyWorld extends World
         addObject(ghostSpawnVertical4,402,283);
         GhostSpawnDoor ghostSpawnDoor = new GhostSpawnDoor();
         addObject(ghostSpawnDoor,324,244);
+        bigBall bigBall = new bigBall();
+        addObject(bigBall,33,68);
+        bigBall bigBall2 = new bigBall();
+        addObject(bigBall2,613,67);
+        bigBall bigBall3 = new bigBall();
+        addObject(bigBall3,34,431);
+        bigBall bigBall4 = new bigBall();
+        addObject(bigBall4,613,450);
+        bigBall3.setLocation(34, 450);
+
+        ball199.setLocation(34,431);
+        bigBall bigBall5 = new bigBall();
+        addObject(bigBall3,34,450);
+        bigBall4.setLocation(613,450);
+        
+        ball207.setLocation(613,431);
+        
     }
     
     
