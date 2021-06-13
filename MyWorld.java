@@ -1047,22 +1047,22 @@ public class MyWorld extends World
         //tenth
         topRightTP topRightTP6 = new topRightTP();
         addObject(topRightTP6,24,568);
-        leftRight leftRight = new leftRight();
-        addObject(leftRight,78,568);
-        leftRight leftRight2 = new leftRight();
-        addObject(leftRight2,147,568);
-        leftRight leftRight3 = new leftRight();
-        addObject(leftRight3,218,568);
+        // leftRight leftRight = new leftRight();
+        // addObject(leftRight,78,568);
+        // leftRight leftRight2 = new leftRight();
+        // addObject(leftRight2,147,568);
+        // leftRight leftRight3 = new leftRight();
+        // addObject(leftRight3,218,568);
         topLeftRight topLeftRight11 = new topLeftRight();
         addObject(topLeftRight11,286,568);
         topLeftRight topLeftRight12 = new topLeftRight();
         addObject(topLeftRight12,358,568);
-        leftRight leftRight4 = new leftRight();
-        addObject(leftRight4,429,586);
-        leftRight leftRight5 = new leftRight();
-        addObject( leftRight5,497, 568);
-        leftRight leftRight6 = new leftRight();
-        addObject(leftRight6,567,568);
+        // leftRight leftRight4 = new leftRight();
+        // addObject(leftRight4,429,586);
+        // leftRight leftRight5 = new leftRight();
+        // addObject( leftRight5,497, 568);
+        // leftRight leftRight6 = new leftRight();
+        // addObject(leftRight6,567,568);
         topLeftTP topLeftTP5 = new topLeftTP();
         addObject(topLeftTP5,620,568);
         //
