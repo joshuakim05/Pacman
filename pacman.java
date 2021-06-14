@@ -145,6 +145,7 @@ public class Pacman extends Actor
             
             if (direction != 2){
                 
+                
                 for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
                     if (!done){
                         setLocation(ptp.getX(), ptp.getY());

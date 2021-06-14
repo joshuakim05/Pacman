@@ -21,7 +21,7 @@ public class CollisionDetector extends Actor
         //return (getObjectsInRange(getImage().getWidth(), Border.class).size() > 0);
         
         
-        return(isTouching(Border.class));
+        return(isTouching(Border.class) || isTouching(GhostSpawnDoor.class));
     }
     
     
