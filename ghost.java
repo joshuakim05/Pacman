@@ -12,15 +12,19 @@ public class ghost extends Actor
      * Act - do whatever the ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    int countdown;
+    int x;
+    int y;
     private CollisionDetector north = new CollisionDetector();
     private CollisionDetector south = new CollisionDetector();
     private CollisionDetector east = new CollisionDetector();
     private CollisionDetector west = new CollisionDetector();
     private boolean createCollisionDetectors = true;
     
-    public ghost(){
-    
+    public ghost(int c, int z, int a){
+        countdown = c;
+        x = z;
+        y = a;
     }
     public void act() 
     {
@@ -48,8 +52,17 @@ public class ghost extends Actor
     
     public void catchPacman(){
         if (getObjectsInRange(20, Pacman.class).size() > 0){
-            ((MyWorld) getWorld()).die();
-            
+            World w = getWorld();
+            MyWorld b = (MyWorld) w;
+            if (b.isPowerPellet()){
+                b.addScore(400);
+                setLocation(323, 280);
+                countdown = 300;
+                x = 0;
+                y = 0;
+            }else{
+                ((MyWorld) getWorld()).die();
+            }
         }
     }
     

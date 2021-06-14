@@ -9,16 +9,16 @@ import java.util.List;
 public class Inky extends ghost
 {
     //bottom right
-    public int x;
-    public int y;
+    //public int x;
+    //public int y;
     private int rotx;
     private int roty;
     private int pacx;
     private int pacy;
-    public int countdown = 500;
+    //public int countdown = 500;
     public int scatter = 400;
     public Inky(){
-    
+        super(500, 0, 0);
     }
     public void act() 
     {

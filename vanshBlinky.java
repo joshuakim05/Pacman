@@ -15,7 +15,9 @@ public class vanshBlinky extends ghost
      */
     boolean[] intersections = new boolean[31];
      int teleportCount=0;
-
+     public vanshBlinky(){
+         super(0,0,0);
+     }
     /*public void act() 
     {
         

@@ -9,14 +9,14 @@ import java.util.List;
 public class Clyde extends ghost
 {
     //bottom left
-    public int x;
-    public int y;
-    public int countdown = 300;
+    //public int x;
+    //public int y;
+    //public int countdown = 300;
     public int targetx;
     public int targety;
     public int scatter = 400;
     public Clyde(){
-    
+        super(300, 0 ,0);
     }
     /**
      * Act - do whatever the Clyde wants to do. This method is calle( whenever

@@ -10,14 +10,14 @@ import java.util.List;
 public class Blinky extends ghost
 {
     //top right
-    public int x;
-    public int y;
-    public int countdown = 30;
+    //public int x;
+    //public int y;
+    //public int countdown = 30;
     public int scatter = 400;
     public int targetx;
     public int targety;
     public Blinky(){
-    
+        super(30, 0, 0);
     }
     /**
      * Act - do whatever the Blinky wants to do. This method is called whenever
