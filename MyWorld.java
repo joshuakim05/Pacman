@@ -1064,22 +1064,22 @@ public class MyWorld extends World
         //tenth
         topRightTP topRightTP6 = new topRightTP();
         addObject(topRightTP6,24,568);
-        leftRight leftRight = new leftRight();
-        addObject(leftRight,78,568);
-        leftRight leftRight2 = new leftRight();
-        addObject(leftRight2,147,568);
-        leftRight leftRight3 = new leftRight();
-        addObject(leftRight3,218,568);
+        // leftRight leftRight = new leftRight();
+        // addObject(leftRight,78,568);
+        // leftRight leftRight2 = new leftRight();
+        // addObject(leftRight2,147,568);
+        // leftRight leftRight3 = new leftRight();
+        // addObject(leftRight3,218,568);
         topLeftRight topLeftRight11 = new topLeftRight();
         addObject(topLeftRight11,286,568);
         topLeftRight topLeftRight12 = new topLeftRight();
         addObject(topLeftRight12,358,568);
-        leftRight leftRight4 = new leftRight();
-        addObject(leftRight4,429,586);
-        leftRight leftRight5 = new leftRight();
-        addObject( leftRight5,497, 568);
-        leftRight leftRight6 = new leftRight();
-        addObject(leftRight6,567,568);
+        // leftRight leftRight4 = new leftRight();
+        // addObject(leftRight4,429,586);
+        // leftRight leftRight5 = new leftRight();
+        // addObject( leftRight5,497, 568);
+        // leftRight leftRight6 = new leftRight();
+        // addObject(leftRight6,567,568);
         topLeftTP topLeftTP5 = new topLeftTP();
         addObject(topLeftTP5,620,568);
         //
@@ -1727,9 +1727,41 @@ public class MyWorld extends World
         bigBall bigBall5 = new bigBall();
         addObject(bigBall3,34,450);
         bigBall4.setLocation(613,450);
-        
+
         ball207.setLocation(613,431);
-        
+
+        ball4.setLocation(34,30);
+        PacmanTurnPoint pacmanTurnPoint = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint,34,30);
+        ball5.setLocation(34,162);
+        PacmanTurnPoint pacmanTurnPoint2 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint2,34,162);
+        bigBall3.setLocation(35,451);
+        PacmanTurnPoint pacmanTurnPoint3 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint3,35,451);
+        ball250.setLocation(34,566);
+        PacmanTurnPoint pacmanTurnPoint4 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint4,34,566);
+        ball253.setLocation(614,566);
+        PacmanTurnPoint pacmanTurnPoint5 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint5,614,566);
+        ball264.setLocation(289,565);
+        PacmanTurnPoint pacmanTurnPoint6 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint6,289,565);
+        ball267.setLocation(357,565);
+        PacmanTurnPoint pacmanTurnPoint7 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint7,357,565);
+        ball241.setLocation(359,508);
+        PacmanTurnPoint pacmanTurnPoint8 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint8,359,508);
+        PacmanTurnPoint pacmanTurnPoint9 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint9,288,510);
+        ball234.setLocation(35,509);
+        PacmanTurnPoint pacmanTurnPoint10 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint10,35,509);
+        ball247.setLocation(615,508);
+        PacmanTurnPoint pacmanTurnPoint11 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint11,615,508);
     }
     
     
