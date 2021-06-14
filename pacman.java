@@ -145,12 +145,14 @@ public class Pacman extends Actor
             
             if (direction != 2){
                 
-                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
                     if (!done){
                         setLocation(ptp.getX(), ptp.getY());
                         done = true;
                     }
                 }
+                
+           
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
                     if (!done){
                         setLocation(tp.getX(), tp.getY());
@@ -189,12 +191,14 @@ public class Pacman extends Actor
             
             if (direction != 1){
                 
-                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
                     if (!done){
                         setLocation(ptp.getX(), ptp.getY());
                         done = true;
                     }
                 }
+                
+                
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
                     if (!done){
                         setLocation(tp.getX(), tp.getY());
@@ -230,7 +234,7 @@ public class Pacman extends Actor
             
             if (direction != 4){
                 
-                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
                     if (!done){
                         setLocation(ptp.getX(), ptp.getY());
                         done = true;
@@ -272,7 +276,7 @@ public class Pacman extends Actor
             boolean done = false;
             
             if (direction != 3){
-                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
                     if (!done){
                         setLocation(ptp.getX(), ptp.getY());
                         done = true;
