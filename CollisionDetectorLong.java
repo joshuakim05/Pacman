@@ -16,4 +16,8 @@ public class CollisionDetectorLong extends CollisionDetector
     {
         // Add your action code here.
     }    
+    
+    
+    
+    
 }

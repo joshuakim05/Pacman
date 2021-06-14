@@ -14,6 +14,7 @@ public class MyWorld extends World
     private int pastLevel=0;
     private int highscore;
     private int pelletCheck = 0;
+    private int timer;
     private boolean powerPellet = false;
     /**
      * Constructor for objects of class MyWorld.
@@ -38,6 +39,9 @@ public class MyWorld extends World
     
     public void setPowerPellet(boolean b){
         powerPellet = b;
+        if(powerPellet){
+            timer = 550;
+        }
     }
     
     public void showLevel(){
@@ -107,10 +111,15 @@ public class MyWorld extends World
                 showText(null, 322, 280); 
                 prepare();
                 lives = 3;
+                showLives();
             }
         }
         checkWin();
         higherscore();
+        if(timer == 0){
+            powerPellet = false;
+        }
+        timer--;
     }
     
     public void die(){
@@ -126,6 +135,7 @@ public class MyWorld extends World
         for(Blinky g: b){
             g.setLocation(272, 280);
             g.countdown = 30;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -133,6 +143,7 @@ public class MyWorld extends World
         for(Clyde g: c){
             g.setLocation(303, 279);
             g.countdown = 300;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -140,6 +151,7 @@ public class MyWorld extends World
         for(Inky g: i){
             g.setLocation(344, 284);
             g.countdown = 500;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -147,6 +159,7 @@ public class MyWorld extends World
         for(Pinky g: p){
             g.setLocation(378, 284);
             g.countdown = 180;
+            g.scatter = 400;
             g.x = 0;
             g.y = 0;
         }
@@ -229,15 +242,19 @@ public class MyWorld extends World
         addObject(pS, 323, 450);
         Blinky blinky = new Blinky();
         blinky.countdown = 30;
+        blinky.scatter = 400;
         addObject(blinky, 24, 24);
         Clyde clyde = new Clyde();
         clyde.countdown = 300;
+        clyde.scatter = 400;
         addObject(clyde, 24, 568);
         Inky inky = new Inky();
         inky.countdown = 500;
+        inky.scatter = 400;
         addObject(inky, 620, 568);
         Pinky pinky = new Pinky();
         pinky.countdown = 180;
+        pinky.scatter=400;
         addObject(pinky, 620, 24);
 
         blinky.setLocation(272,280);
@@ -1710,9 +1727,41 @@ public class MyWorld extends World
         bigBall bigBall5 = new bigBall();
         addObject(bigBall3,34,450);
         bigBall4.setLocation(613,450);
-        
+
         ball207.setLocation(613,431);
-        
+
+        ball4.setLocation(34,30);
+        PacmanTurnPoint pacmanTurnPoint = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint,34,30);
+        ball5.setLocation(34,162);
+        PacmanTurnPoint pacmanTurnPoint2 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint2,34,162);
+        bigBall3.setLocation(35,451);
+        PacmanTurnPoint pacmanTurnPoint3 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint3,35,451);
+        ball250.setLocation(34,566);
+        PacmanTurnPoint pacmanTurnPoint4 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint4,34,566);
+        ball253.setLocation(614,566);
+        PacmanTurnPoint pacmanTurnPoint5 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint5,614,566);
+        ball264.setLocation(289,565);
+        PacmanTurnPoint pacmanTurnPoint6 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint6,289,565);
+        ball267.setLocation(357,565);
+        PacmanTurnPoint pacmanTurnPoint7 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint7,357,565);
+        ball241.setLocation(359,508);
+        PacmanTurnPoint pacmanTurnPoint8 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint8,359,508);
+        PacmanTurnPoint pacmanTurnPoint9 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint9,288,510);
+        ball234.setLocation(35,509);
+        PacmanTurnPoint pacmanTurnPoint10 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint10,35,509);
+        ball247.setLocation(615,508);
+        PacmanTurnPoint pacmanTurnPoint11 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint11,615,508);
     }
     
     

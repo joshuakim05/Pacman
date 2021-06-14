@@ -9,9 +9,13 @@ import java.util.List;
  */
 public class Blinky extends ghost
 {
+    //top right
     public int x;
     public int y;
     public int countdown = 30;
+    public int scatter = 400;
+    public int targetx;
+    public int targety;
     public Blinky(){
     
     }
@@ -23,21 +27,38 @@ public class Blinky extends ghost
     {
       
       catchPacman();
-      
       if(isTouching(teleportPointLeft.class)){
           setLocation(600, getY());
       }else if(isTouching(teleportPointRight.class)){
           setLocation(44, getY());
       }
       List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
-      for(Pacman p: pm){
-          if(Math.abs(getX()-p.getX())<30&&Math.abs(getY()-p.getY())<30){
-              close();
-          }else{
-              far();
+      World w = getWorld();
+      MyWorld b = (MyWorld) w;
+      if (b.isPowerPellet()){
+        random();
+        setImage("ghost-vulnerable.png");
+      }else{
+          setImage("Blinky.png");
+          for(Pacman p: pm){
+            if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
+               targetx = 620;
+               targety = 24;
+            }else{
+                targetx = p.getX();
+                targety = p.getY();
+            }
+            if(Math.abs(getX()-targetx)<30&&Math.abs(getY()-targety)<30){
+                 close();
+              }else{
+                  far();
+              }
+              scatter--;
           }
+        }
+      for(Pacman p: pm){
           if (isTouching(GhostStart.class)){
-                if(getX()>p.getX()){
+                if(getX()>targetx){
                     x = -4;
                     y = 0;
                 }else{
@@ -52,38 +73,41 @@ public class Blinky extends ghost
               }else{
                   x=-4;
               }
+              y = 0;
           }
           if(isTouching(bottomBoundry.class)){
               setLocation(getX(), 568);
-              if(p.getX()>getX()){
+              if(targetx>getX()){
                   x=4;
               }else{
                   x=-4;
               }
+              y = 0;
           }
           if(isTouching(leftBoundry.class)){
-              setLocation(getY(), 24);
+              setLocation(24, getY());
               if(p.getY()>getY()){
                   y=4;
               }else{
                   y=-4;
               }
+              x = 0;
           }
           if(isTouching(rightBoundry.class)){
-              setLocation(getY(), 620);
-              if(p.getY()>getY()){
+              setLocation(620, getY());
+              if(targetx>getY()){
                   y=4;
               }else{
                   y=-4;
               }
+              x = 0;
           }
-          
-          
         }
         setLocation(getX()+x, getY()+y);
         countdown--;
         if (countdown == 0){
             setLocation(322, 224);
+            scatter = 400;
         }
     }
     
@@ -91,7 +115,7 @@ public class Blinky extends ghost
         List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
         for(Pacman p: pm){
             if (isTouching(bottmLeftTP.class)){
-                if(getX()-p.getX()>p.getY()-getY()){
+                if(getX()-targetx>targety-getY()){
                     x = -4;
                     y = 0;
                 }else{
@@ -100,8 +124,8 @@ public class Blinky extends ghost
                 }
             }
                 if (isTouching(bottomLeftRightTP.class)){
-                    if(Math.abs(getX()-p.getX())>p.getY()-getY()){
-                        if (getX()>p.getX()){
+                    if(Math.abs(getX()-targetx)>targety-getY()){
+                        if (getX()>targetx){
                             x = -4;
                         }else{
                             x = 4;
@@ -113,7 +137,7 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(bottomRightTP.class)){
-                    if(p.getX()-getX()>p.getY()-getY()){
+                    if(targetx-getX()>targety-getY()){
                         x = 4;
                         y = 0;
                     }else{
@@ -122,11 +146,11 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(topBottomRightTP.class)){
-                    if(p.getX()-getX()>Math.abs(p.getY()-getY())){
+                    if(targetx-getX()>Math.abs(targety-getY())){
                         x = 4;
                         y = 0;
                     }else{
-                        if (getY()>p.getY()){
+                        if (getY()>targety){
                             y = -4;
                         }else{
                             y= 4;
@@ -135,15 +159,15 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(topBottomLeftRightTP.class)){
-                    if(Math.abs(getX()-p.getX())>Math.abs(getY()- p.getY())){
-                        if (getX()>p.getX()){
+                    if(Math.abs(getX()-targetx)>Math.abs(getY()- targety)){
+                        if (getX()>targetx){
                             x = -4;
                         }else{
                             x= 4;
                         } 
                         y = 0;
                     }else{
-                        if (getY()>p.getY()){
+                        if (getY()>targety){
                             y = -4;
                         }else{
                             y= 4;
@@ -152,11 +176,11 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(topBottomLeftTP.class)){
-                    if(getX()-p.getX()>Math.abs(getY()- p.getY())){
+                    if(getX()-targetx>Math.abs(getY()- targetx)){
                         x = -4;
                         y = 0;
                     }else{
-                        if (getY()>p.getY()){
+                        if (getY()>targety){
                             y = -4;
                         }else{
                             y= 4;
@@ -165,8 +189,8 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(topLeftRight.class)){
-                    if(Math.abs(getX()-p.getX())>getY()- p.getY()){
-                        if (getX()>p.getX()){
+                    if(Math.abs(getX()-targetx)>getY()- targety){
+                        if (getX()>targetx){
                             x = -4;
                         }else{
                             x= 4;
@@ -178,7 +202,7 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(topLeftTP.class)){
-                    if(getX()-p.getX()>getY()- p.getY()){
+                    if(getX()-targetx>getY()- targety){
                         x= -4;
                         y = 0;
                     }else{
@@ -187,7 +211,7 @@ public class Blinky extends ghost
                     }
                 }
                 if (isTouching(topRightTP.class)){
-                    if(p.getX()-getX()>getY()- p.getY()){
+                    if(targetx-getX()>getY()- targety){
                         x= 4;
                         y = 0;
                     }else{
@@ -201,7 +225,7 @@ public class Blinky extends ghost
         List<Pacman> pm = getObjectsInRange(3000, Pacman.class);
         for(Pacman p: pm){
             if (isTouching(bottmLeftTP.class)){
-                if(p.getX()-getX()<p.getY()-getY()){
+                if(targetx-getX()<targety-getY()){
                     x = -4;
                     y = 0;
                 }else{
@@ -210,8 +234,8 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(bottomLeftRightTP.class)){
-                if(Math.abs(getX()-p.getX())<p.getY()-getY()){
-                    if (getX()>p.getX()){
+                if(Math.abs(getX()-targetx)<targety-getY()){
+                    if (getX()>targetx){
                         x = -4;
                     }else{
                         x = 4;
@@ -223,7 +247,7 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(bottomRightTP.class)){
-                if(getX()-p.getX()< p.getY()-getY()){
+                if(getX()-targetx< targety-getY()){
                     x = 4;
                     y = 0;
                 }else{
@@ -232,11 +256,11 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(topBottomRightTP.class)){
-                if(getX()-p.getX()< Math.abs(p.getY()-getY())){
+                if(getX()-targetx< Math.abs(targety-getY())){
                     x = 4;
                     y = 0;
                 }else{
-                    if (getY()>p.getY()){
+                    if (getY()>targety){
                         y = -4;
                     }else{
                         y= 4;
@@ -245,15 +269,15 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(topBottomLeftRightTP.class)){
-                if(Math.abs(getX()-p.getX())<Math.abs(getY()- p.getY())){
-                    if (getX()>p.getX()){
+                if(Math.abs(getX()-targetx)<Math.abs(getY()- targety)){
+                    if (getX()>targetx){
                         x = -4;
                     }else{
                         x= 4;
                     } 
                     y = 0;
                 }else{
-                    if (getY()<p.getY()){
+                    if (getY()<targety){
                         y = -4;
                     }else{
                         y= 4;
@@ -262,11 +286,11 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(topBottomLeftTP.class)){
-                if(p.getX()-getX()<Math.abs(getY()- p.getY())){
+                if(targetx-getX()<Math.abs(getY()- targety)){
                     x = -4;
                     y = 0;
                 }else{
-                    if (getY()<p.getY()){
+                    if (getY()<targety){
                         y = -4;
                     }else{
                         y= 4;
@@ -275,8 +299,8 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(topLeftRight.class)){
-                if(Math.abs(getX()-p.getX())<getY()- p.getY()){
-                    if (getX()>p.getX()){
+                if(Math.abs(getX()-targetx)<getY()- targety){
+                    if (getX()>targetx){
                         x = -4;
                     }else{
                         x= 4;
@@ -288,7 +312,7 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(topLeftTP.class)){
-                if(p.getX()-getX()<getY()- p.getY()){
+                if(targetx-getX()<getY()- targety){
                     x= -4;
                     y = 0;
                 }else{
@@ -297,13 +321,145 @@ public class Blinky extends ghost
                 }
             }
             if (isTouching(topRightTP.class)){
-                if(getX()-p.getX()<getY()- p.getY()){
+                if(getX()-targetx<getY()- targety){
                     x= 4;
                     y = 0;
                 }else{
                     y = -4;
                     x = 0;
                 }
+            }
+        }
+    }
+    
+    public void random(){
+        if (isTouching(bottmLeftTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x = -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(bottomLeftRightTP.class)){
+            if(Greenfoot.getRandomNumber(3)!=0){
+                if (Greenfoot.getRandomNumber(2) == 1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x = 4;
+                    setLocation(getX()+21, getY());
+                }
+                y = 0;
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(bottomRightTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x = 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                y = 4;
+                x = 0;
+                setLocation(getX(), getY()+21);
+            }
+        }
+        if (isTouching(topBottomRightTP.class)){
+            if(Greenfoot.getRandomNumber(3)==0){
+                x = 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                if (Greenfoot.getRandomNumber(2)==1){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                }  
+                x = 0;  
+            }
+        }
+        if (isTouching(topBottomLeftRightTP.class)){
+            if(Greenfoot.getRandomNumber(2) == 0){
+                if (Greenfoot.getRandomNumber(2)==1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x= 4;
+                    setLocation(getX()+21, getY());
+                } 
+                y = 0;
+            }else{
+                if (Greenfoot.getRandomNumber(2)== 1){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                } 
+                x = 0;
+            }
+        }
+        if (isTouching(topBottomLeftTP.class)){
+            if(Greenfoot.getRandomNumber(3) == 0){
+                x = -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                if (Greenfoot.getRandomNumber(2) == 0){
+                    y = -4;
+                    setLocation(getX(), getY()-21);
+                }else{
+                    y= 4;
+                    setLocation(getX(), getY()+21);
+                } 
+                x = 0;
+            }
+        }
+        if (isTouching(topLeftRight.class)){
+            if(Greenfoot.getRandomNumber(3)!=0){
+                if (Greenfoot.getRandomNumber(2)==1){
+                    x = -4;
+                    setLocation(getX()-21, getY());
+                }else{
+                    x= 4;
+                    setLocation(getX()+21, getY());
+                }
+                y = 0;
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
+            }
+        }
+        if (isTouching(topLeftTP.class)){
+            if(Greenfoot.getRandomNumber(2)==1){
+                x= -4;
+                y = 0;
+                setLocation(getX()-21, getY());
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
+            }
+        }
+        if (isTouching(topRightTP.class)){
+            if(Greenfoot.getRandomNumber(2)==0){
+                x= 4;
+                y = 0;
+                setLocation(getX()+21, getY());
+            }else{
+                y = -4;
+                x = 0;
+                setLocation(getX(), getY()-21);
             }
         }
     }

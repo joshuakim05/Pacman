@@ -19,10 +19,10 @@ public class Pacman extends Actor
     private int direction = 0;
     public int x;
     public int y;
-    private CollisionDetector north = new CollisionDetectorWide();
-    private CollisionDetector south = new CollisionDetectorWide();
-    private CollisionDetector east = new CollisionDetectorLong();
-    private CollisionDetector west = new CollisionDetectorLong();
+    private CollisionDetectorWide north = new CollisionDetectorWide();
+    private CollisionDetectorWide south = new CollisionDetectorWide();
+    private CollisionDetectorLong east = new CollisionDetectorLong();
+    private CollisionDetectorLong west = new CollisionDetectorLong();
     private boolean createCollisionDetectors = true;
     private int previousX = 323;
     private int previousY = 450;
@@ -144,6 +144,13 @@ public class Pacman extends Actor
             boolean done = false;
             
             if (direction != 2){
+                
+                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                    if (!done){
+                        setLocation(ptp.getX(), ptp.getY());
+                        done = true;
+                    }
+                }
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
                     if (!done){
                         setLocation(tp.getX(), tp.getY());
@@ -181,6 +188,13 @@ public class Pacman extends Actor
             boolean done = false;
             
             if (direction != 1){
+                
+                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                    if (!done){
+                        setLocation(ptp.getX(), ptp.getY());
+                        done = true;
+                    }
+                }
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
                     if (!done){
                         setLocation(tp.getX(), tp.getY());
@@ -215,6 +229,13 @@ public class Pacman extends Actor
             boolean done = false;
             
             if (direction != 4){
+                
+                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                    if (!done){
+                        setLocation(ptp.getX(), ptp.getY());
+                        done = true;
+                    }
+                }
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
                     if (!done){
                         setLocation(tp.getX(), tp.getY());
@@ -251,6 +272,12 @@ public class Pacman extends Actor
             boolean done = false;
             
             if (direction != 3){
+                for (PacmanTurnPoint ptp: getObjectsInRange(12, PacmanTurnPoint.class)){
+                    if (!done){
+                        setLocation(ptp.getX(), ptp.getY());
+                        done = true;
+                    }
+                }
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
                     if (!done){
                         setLocation(tp.getX(), tp.getY());
