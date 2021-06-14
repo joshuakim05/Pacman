@@ -115,6 +115,19 @@ public class Clyde extends ghost
        
     
     public void move(){
+        World w = getWorld();
+        MyWorld b = (MyWorld) w;
+        if (b.level == 1){
+            if(x ==-4){
+                x=-3;
+            }else if(x == 4){
+                x = 3;
+            }else if (y == -4){
+                y = -3;
+            }else if(y == 4){
+                y = 3;
+            }
+        }
         setLocation(getX()+x, getY()+y);
         /*
         public void move(){

@@ -83,6 +83,17 @@ public class Pinky extends ghost
           target();
           scatter--;
       }
+      if (b.level == 1){
+            if(x ==-4){
+                x=-3;
+            }else if(x == 4){
+                x = 3;
+            }else if (y == -4){
+                y = -3;
+            }else if(y == 4){
+                y = 3;
+            }
+        }
       setLocation(getX()+x, getY()+y);
       countdown--;
       if (countdown == 0){

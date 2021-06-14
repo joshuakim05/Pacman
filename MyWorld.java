@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     private int score = 0;
     private int lives;
-    private int level;
+    public int level;
     private int pastLevel=0;
     private int highscore;
     private int pelletCheck = 0;
