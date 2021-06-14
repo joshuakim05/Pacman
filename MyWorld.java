@@ -195,6 +195,7 @@ public class MyWorld extends World
                 s.y = 0;
                 s.countdown = -1;
             }
+            score = 0;
         }
     }
         
@@ -221,6 +222,7 @@ public class MyWorld extends World
             g.getWorld().removeObject(g);
         }
         prepare();
+        powerPellet = false;
         level += pastLevel;
         showLevel();
     }
@@ -231,8 +233,8 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        powerPellet = false;
         level = 1;
-        score = 0;
         showLevel();
         showLives();
         showScore();
