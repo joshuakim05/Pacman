@@ -119,10 +119,7 @@ public class Pacman extends Actor
         //moves left and does not let off screen
         if(Greenfoot.isKeyDown("up")){
             
-            if (north.intersectingBorder()){
-                
-                return;
-            }
+            
             
             if (direction == 1){
                 return;
@@ -141,25 +138,29 @@ public class Pacman extends Actor
             //}
             
             //find nearest turn point
-            turnPoint nearest;
+            
             boolean done = false;
             
             if (direction != 2){
                 
                 
-                
+          
                 for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
-                    if (!done){
+                    if (done == false){
                         setLocation(ptp.getX(), ptp.getY());
+                        
                         done = true;
+                        
                     }
+                    
                 }
                 
            
                 for (turnPoint tp: getObjectsInRange(12, turnPoint.class)){
-                    if (!done){
+                    if (done == false){
                         setLocation(tp.getX(), tp.getY());
                         done = true;
+                        
                     }
                     
                     
@@ -167,6 +168,11 @@ public class Pacman extends Actor
                 }
 
                
+            }
+            
+            if (north.intersectingBorder()){
+                return;
+                
             }
             
             turnTowards(getX(), 0);

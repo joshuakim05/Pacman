@@ -123,6 +123,7 @@ public class MyWorld extends World
     }
     
     public void die(){
+        Greenfoot.playSound("pacman_death.wav");
         lives--;
         showLives();
         List<Pacman> pm = getObjects(Pacman.class);
@@ -233,6 +234,7 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        Greenfoot.playSound("pacman_beginning.wav");
         powerPellet = false;
         level = 1;
         showLevel();

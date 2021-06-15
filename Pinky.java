@@ -132,10 +132,10 @@ public class Pinky extends ghost
             pacx = p.getX()+rotx;
             pacy = p.getY()+roty;
             //setLocation(getX()+x, getY()+y);
-            if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
-                pacx = 24;
-                pacy = 24;
-            }
+          if(scatter <=400 && scatter>200||scatter<=-200&&scatter>-400||scatter<=-800&&scatter>-950||scatter<=-1350&&scatter>-1500){
+              pacx = 24;
+              pacy = 24;
+          }
           if(Math.abs(getX()-p.getX())<30&&Math.abs(getY()-p.getY())<30){
               close();
           }else{
