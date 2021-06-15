@@ -30,6 +30,7 @@ public class MyWorld extends World
         showScore();
         showLevel();
         showHighscore();
+        Greenfoot.playSound("pacman_beginning.wav");
         //die();
     }
     
@@ -42,6 +43,10 @@ public class MyWorld extends World
         if(powerPellet){
             timer = 550;
         }
+    }
+    
+    public int getTimer(){
+        return timer;
     }
     
     public void showLevel(){
@@ -75,8 +80,11 @@ public class MyWorld extends World
             lives++;
             showLives();
             win();
+            Greenfoot.playSound("extra_life.wav");
         }
     }
+    
+    
     
     public void higherscore(){
         if (score>highscore){
@@ -120,6 +128,7 @@ public class MyWorld extends World
             powerPellet = false;
         }
         timer--;
+        
     }
     
     public void die(){
@@ -234,7 +243,7 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        Greenfoot.playSound("pacman_beginning.wav");
+        
         powerPellet = false;
         level = 1;
         showLevel();

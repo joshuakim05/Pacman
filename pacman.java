@@ -26,6 +26,7 @@ public class Pacman extends Actor
     private boolean createCollisionDetectors = true;
     private int previousX = 323;
     private int previousY = 450;
+    private int chompTimer = 0;
     public Pacman(){
         image1 = new GreenfootImage("Pac-Man-test.png");
         image2 = new GreenfootImage("pacman-solid-test.png");
@@ -35,6 +36,14 @@ public class Pacman extends Actor
         timeTillSwitch = 30;
         north.setLocation(0, 0);
         
+    }
+    
+    public int getChompTimer(){
+        return chompTimer;
+    }
+    
+    public void setChompTimer(int x){
+        chompTimer = x;
     }
     
     public int getDirection(){
@@ -70,13 +79,18 @@ public class Pacman extends Actor
             for (int i = 0; i < 10; i++){
                 changeImage();
             }
+            
+            
             setLocation(getX(), getY()-3);
+            chompSound(north);
+                
         } else if (direction == 2 && !south.intersectingBorder()){
             //down
             for (int i = 0; i < 10; i++){
                 changeImage();
             }
             setLocation(getX(), getY()+3);
+            chompSound(south);
         } else if (direction == 3 && !west.intersectingBorder()){
             //left
             
@@ -88,6 +102,7 @@ public class Pacman extends Actor
                 changeImage();
             }
             setLocation(getX()-3, getY());
+            chompSound(west);
             
         } else if (direction == 4 && !east.intersectingBorder()){
             //right
@@ -101,7 +116,7 @@ public class Pacman extends Actor
                 changeImage();
             }
             setLocation(getX()+3, getY());
-            
+            chompSound(east);
             
         }
         // move();
@@ -328,6 +343,18 @@ public class Pacman extends Actor
         
         
     }
+    
+    private void chompSound(CollisionDetector cd){
+        //if (cd.isTouchingBall() && chompTimer == 0){
+                //Greenfoot.playSound("pacman_chomp.wav");
+                //chompTimer = 30;
+        //} 
+        //if (chompTimer > 0){
+            //chompTimer--;
+        //}
+    }
+    
+   
     
     // private void move(){
     //         if (isTouching(pacmanStart.class)){

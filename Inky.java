@@ -73,7 +73,25 @@ public class Inky extends ghost
       MyWorld b = (MyWorld) w;
       if (b.isPowerPellet()){
         random();
-        setImage("ghost-vulnerable.png");
+        int time = b.getTimer();
+        if (time > 100){
+            setImage("ghost-vulnerable.png");
+        }
+        
+        
+        if (time <= 100){
+                if (time % 10 == 0){
+                    
+                    if ((time / 10) % 2 == 0){
+                        setImage("ghost-vulnerable-fading.png");
+                    } else {
+                        setImage("ghost-vulnerable.png");
+                    }
+                
+                
+                
+        }
+    }
       }else{
           setImage("Inky.png");
           getTarget();

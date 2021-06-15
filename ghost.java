@@ -39,8 +39,10 @@ public class ghost extends Actor
         
         updateCollisionDetectors();
         
+      
         
     }    
+    
     
     private void updateCollisionDetectors(){
         

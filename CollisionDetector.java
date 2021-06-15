@@ -24,6 +24,10 @@ public class CollisionDetector extends Actor
         return(isTouching(Border.class) || isTouching(GhostSpawnDoor.class));
     }
     
+    public boolean isTouchingBall(){
+        return (isTouching(ball.class));
+    }
+    
     
     
     public boolean intersectingTeleportWall(){

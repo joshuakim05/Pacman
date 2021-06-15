@@ -37,7 +37,25 @@ public class Blinky extends ghost
       MyWorld b = (MyWorld) w;
       if (b.isPowerPellet()){
         random();
-        setImage("ghost-vulnerable.png");
+        int time = b.getTimer();
+        if (time > 100){
+            setImage("ghost-vulnerable.png");
+        }
+        
+        
+        if (time <= 100){
+                if (time % 10 == 0){
+                    
+                    if ((time / 10) % 2 == 0){
+                        setImage("ghost-vulnerable-fading.png");
+                    } else {
+                        setImage("ghost-vulnerable.png");
+                    }
+                
+                
+                
+        }
+    }
       }else{
           setImage("Blinky.png");
           for(Pacman p: pm){
@@ -105,16 +123,17 @@ public class Blinky extends ghost
         }
         if (b.level == 1){
             if(x ==-4){
-                x=-3;
+                x=-2;
             }else if(x == 4){
-                x = 3;
+                x = 2;
             }else if (y == -4){
-                y = -3;
+                y = -2;
             }else if(y == 4){
-                y = 3;
+                y = 2;
             }
         }
         setLocation(getX()+x, getY()+y);
+        
         countdown--;
         if (countdown == 0){
             setLocation(322, 224);
