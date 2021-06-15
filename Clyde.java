@@ -119,13 +119,13 @@ public class Clyde extends ghost
         MyWorld b = (MyWorld) w;
         if (b.level == 1){
             if(x ==-4){
-                x=-3;
+                x=-2;
             }else if(x == 4){
-                x = 3;
+                x = 2;
             }else if (y == -4){
-                y = -3;
+                y = -2;
             }else if(y == 4){
-                y = 3;
+                y = 2;
             }
         }
         setLocation(getX()+x, getY()+y);
