@@ -1856,6 +1856,14 @@ public class MyWorld extends World
         removeObject(ball134);
         ball135.setLocation(289,198);
         removeObject(ball135);
+        ball217.setLocation(567,508);
+
+        ball217.setLocation(565,508);
+        PacmanTurnPoint pacmanTurnPoint15 = new PacmanTurnPoint();
+        addObject(pacmanTurnPoint15,565,508);
+
+        ball116.setLocation(498,509);
+        
     }
     
     

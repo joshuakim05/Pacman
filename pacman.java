@@ -120,6 +120,7 @@ public class Pacman extends Actor
         if(Greenfoot.isKeyDown("up")){
             
             if (north.intersectingBorder()){
+                
                 return;
             }
             
@@ -146,6 +147,7 @@ public class Pacman extends Actor
             if (direction != 2){
                 
                 
+                
                 for (PacmanTurnPoint ptp: getObjectsInRange(20, PacmanTurnPoint.class)){
                     if (!done){
                         setLocation(ptp.getX(), ptp.getY());
@@ -159,6 +161,8 @@ public class Pacman extends Actor
                         setLocation(tp.getX(), tp.getY());
                         done = true;
                     }
+                    
+                    
                 
                 }
 
