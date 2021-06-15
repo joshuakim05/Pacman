@@ -13,6 +13,7 @@ public class ball extends Actor
             //Greenfoot.playSound("eat_pellet.wav");
             world.addScore(10);
             world.removeObject(this);
+            Greenfoot.playSound("pacman_chomp.wav");
         }
         
     }

@@ -60,6 +60,7 @@ public class ghost extends Actor
                 countdown = 300;
                 x = 0;
                 y = 0;
+                Greenfoot.playSound("pacman_eatghost.wav");
             }else{
                 ((MyWorld) getWorld()).die();
             }
