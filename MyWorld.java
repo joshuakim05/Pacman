@@ -139,7 +139,10 @@ public class MyWorld extends World
             powerPellet = false;
         }
         timer--;
-        ghostSiren();
+        if(powerPellet){
+            ghostSiren();
+        }
+        
         
     }
     
