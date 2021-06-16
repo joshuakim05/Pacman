@@ -63,6 +63,7 @@ public class MyWorld extends World
     
     public void showLives(){
         showText("Lives: " + lives, 50, 620);
+        
     }
     
     public void addScore(int points){
