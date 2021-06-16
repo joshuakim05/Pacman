@@ -18,6 +18,7 @@ public class ball extends Actor
             Pacman pacman = pm.get(0);
             if (pacman.getChompTimer() == 0){
                 Greenfoot.playSound("pacmanchomp.wav");
+                
                 pacman.setChompTimer(3);
             } else {
                 pacman.setChompTimer(pacman.getChompTimer() - 1);
