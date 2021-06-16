@@ -16,6 +16,7 @@ public class MyWorld extends World
     private int pelletCheck = 0;
     private int timer;
     private boolean powerPellet = false;
+    private int sirenTimer = 100;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -85,6 +86,15 @@ public class MyWorld extends World
         }
     }
     
+    private void ghostSiren(){
+        if (sirenTimer == 0){
+            Greenfoot.playSound("siren_sound.mp3");
+            sirenTimer = 100;
+        } else {
+            sirenTimer--;
+        }
+    }
+    
     
     
     public void higherscore(){
@@ -129,6 +139,7 @@ public class MyWorld extends World
             powerPellet = false;
         }
         timer--;
+        ghostSiren();
         
     }
     
