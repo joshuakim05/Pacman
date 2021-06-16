@@ -18,6 +18,7 @@ public class MyWorld extends World
     private boolean powerPellet = false;
     private int powerPelletTimer = 0;
     private int sirenTimer = 100;
+    private GreenfootSound sound = new GreenfootSound("power_pellet_mode.mp3");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -88,6 +89,10 @@ public class MyWorld extends World
     }
     
     private void ghostSiren(){
+        
+        if (powerPellet){
+            return;
+        }
         if (sirenTimer == 0){
             Greenfoot.playSound("siren_sound.mp3");
             sirenTimer = 100;
@@ -98,11 +103,19 @@ public class MyWorld extends World
     
     private void powerPelletSound(){
         if (powerPelletTimer == 0){
-            Greenfoot.playSound("power_pellet_mode.mp3");
+            if (sound.isPlaying()){
+                sound.stop();
+   
+            } 
+            sound.play();
             powerPelletTimer = 800;
         } else {
             powerPelletTimer--;
         }
+    }
+    
+    public void resetPowerTimer(){
+        powerPelletTimer = 0;
     }
     
     

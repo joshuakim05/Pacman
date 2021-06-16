@@ -14,6 +14,7 @@ public class bigBall extends Actor
             world.addScore(50);
             world.removeObject(this);
             world.setPowerPellet(true);
+            world.resetPowerTimer();
         }
         
     }
