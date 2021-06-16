@@ -27,6 +27,7 @@ public class Pacman extends Actor
     private int previousX = 323;
     private int previousY = 450;
     private int chompTimer = 0;
+    
     public Pacman(){
         image1 = new GreenfootImage("Pac-Man-test.png");
         image2 = new GreenfootImage("pacman-solid-test.png");
@@ -52,6 +53,8 @@ public class Pacman extends Actor
     
     public void act() 
     {
+        
+        
 
         if(isTouching(teleportPointLeft.class)){
             setLocation(600, getY());
@@ -353,6 +356,8 @@ public class Pacman extends Actor
             //chompTimer--;
         //}
     }
+    
+    
     
    
     

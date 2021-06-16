@@ -16,6 +16,7 @@ public class MyWorld extends World
     private int pelletCheck = 0;
     private int timer;
     private boolean powerPellet = false;
+    private int sirenTimer = 100;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -63,6 +64,7 @@ public class MyWorld extends World
     
     public void showLives(){
         showText("Lives: " + lives, 50, 620);
+        
     }
     
     public void addScore(int points){
@@ -81,6 +83,15 @@ public class MyWorld extends World
             showLives();
             win();
             Greenfoot.playSound("extra_life.wav");
+        }
+    }
+    
+    private void ghostSiren(){
+        if (sirenTimer == 0){
+            Greenfoot.playSound("siren_sound.mp3");
+            sirenTimer = 100;
+        } else {
+            sirenTimer--;
         }
     }
     
@@ -128,6 +139,7 @@ public class MyWorld extends World
             powerPellet = false;
         }
         timer--;
+        ghostSiren();
         
     }
     
