@@ -27,6 +27,7 @@ public class Pacman extends Actor
     private int previousX = 323;
     private int previousY = 450;
     private int chompTimer = 0;
+    private int sirenTimer = 0;
     public Pacman(){
         image1 = new GreenfootImage("Pac-Man-test.png");
         image2 = new GreenfootImage("pacman-solid-test.png");
@@ -52,6 +53,8 @@ public class Pacman extends Actor
     
     public void act() 
     {
+        
+        ghostSiren();
 
         if(isTouching(teleportPointLeft.class)){
             setLocation(600, getY());
@@ -352,6 +355,15 @@ public class Pacman extends Actor
         //if (chompTimer > 0){
             //chompTimer--;
         //}
+    }
+    
+    private void ghostSiren(){
+        if (sirenTimer == 0){
+            Greenfoot.playSound("siren_sound.mp3");
+            sirenTimer = 100;
+        } else {
+            sirenTimer--;
+        }
     }
     
    
