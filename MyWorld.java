@@ -129,6 +129,7 @@ public class MyWorld extends World
                 }
                 showText(null, 322, 280); 
                 prepare();
+                Greenfoot.playSound("pacman_beginning.wav");
                 lives = 3;
                 showLives();
             }
@@ -258,7 +259,6 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        
         powerPellet = false;
         level = 1;
         showLevel();
